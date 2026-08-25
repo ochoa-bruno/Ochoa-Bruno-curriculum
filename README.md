@@ -1,1 +1,1 @@
-# Ochoa-Bruno-curriculum
+# ochoa-bruno-curriculum
