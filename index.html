@@ -4,39 +4,113 @@
 <head>
     <meta charset="utf-8" />
     <title>Curriculum Vitae</title>
+    <link rel="stylesheet" href="style.css">
     <style>
-@import url('https://fonts.googleapis.com/css2?family=Alegreya:ital,wght@0,400..900;1,400..900&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
-
-</style>
+        @import url('https://fonts.googleapis.com/css2?family=Alegreya:ital,wght@0,400..900;1,400..900&display=swap');
+    </style>
 </head>
 
 <body>
     <header>
-        <img src="img/foto-header.png" width="50" height="50" <nav>
+     <nav>
         <a href="#">Sobre mi</a>
         <a href="#">Estudios</a>
+        <a href="#">Habilidades</a>
         <a href="#">Experiencia</a>
         <a href="#">Contacto</a>
         </nav>
     </header>
     <main>
-        <section>
+        <section id="hero">
             <h1>Bruno Ochoa</h1>
-            <h2>Información personal</h2>
-            <p>Estudiante avanzado de Diseño y Comunicación Visual con especial interés en la arquitectura de la
-                información y el diseño editorial. Mi formación académica me ha permitido desarrollar una fuerte
-                organización, gestión del tiempo y un riguroso compromiso con la calidad.</p>
-            <img src="img/foto-sobremi.jpg" width="150" height="100" alt="Foto de Bruno Ochoa" 
-        </section> 
+            <h2 id="bajada">Estudiante de Diseño y Comunicación Visual</h2>
+        </section>
+        <section>
+            <h2>Sobre mi</h2>
+            <p>Estudiante de cuarto año de la licenciatura en Diseño y Comunicación Visual en la Universidad Nacional de Lanús. Me interesa mucho la tipografía, sobre todo su proceso de diseño y siempre busco maneras de incorporar nuevo conocimiento.</p>
+            <img src="img/foto-header.jpg" alt="Foto de Bruno Ochoa" height="50%" width="50%">
+        </section>
+        <section>
+            <h2>Estudios</h2>
+            <ul>
+                <li class="subtitulo">Licenciatura en Diseño y Comunicación Visual</li>
+                <li>Univerisdad Nacional de Lanús | En curso</li>
+<!--Duda: en este caso el texto "Universidad Nacional de Lanús... ¿esta bien ubicado en un < li>, o iría en un < p>?-->
+            </ul>
+        </section>
+        <section>
+            <h2>Habilidades</h2>
+            <ul>
+                <li>Adobe Creative Cloud: Illustrator, Photoshop, InDesign</li>
+                <li>Otros: Canva, conocimientos básicos de HTML/CSS</li>
+                <li>Diseño editorial</li>
+                <li>Diseño tipográfico</li>
+                <li>Identidad visual / Branding</li>
+            </ul>
+        </section>
+        <section>
+            <h2>Experiencia</h2>
+            <ul>
+                <li class="subtitulo">Diseñador Creativo Freelance </li> 
+                <li>Proyectos independientes(Enero 2023 – Actualidad)
+                </li>
+            </ul>
+            <ol>
+                <li>Diseño y optimización de piezas gráficas para redes sociales (Instagram/Facebook) para pequeños comercios y emprendimientos, mejorando su consistencia visual.</li>
+                <li>
+                    Creación de material promocional apto para imprenta (folletos, flyers, packaging y cartelería), realizando el armado de originales y control de archivos en varios formatos.
+                </li>
+                <li>
+                    Asesoramiento directo a clientes independientes para traducir sus necesidades comerciales en soluciones estéticas y funcionales.
+                </li>
+            </ol>
+            <ul>
+                <li class="subtitulo">Nimara Artesanal </li> 
+                <li>Gestión Comercial y Comunicación Visual (Dic 2025 - Actualidad)
+                </li>
+            </ul>
+             <ol>
+                <li>
+                    Gestión integral del emprendimiento, control de calidad visual y atención personalizada</li>
+                <li>
+                    Gestión y curaduría del contenido estético para redes sociales y mensajería.
+                </li>
+                <li>
+                    Coordinación de logística, organización de stock y optimización del flujo de entregas a clientes.
+                </li>
+            </ol>
+            <ul>
+                <li class="subtitulo">Estudio Girasol </li> 
+                <li>Gestión Comercial y Comunicación Visual (Feb 2021 – Ene 2022)
+                </li>
+            </ul>
+            <ol>
+                <li>Gestión integral del emprendimiento, participando activamente en la cadena de producción, control de calidad visual y atención personalizada</li>
+                <li>
+                    Gestión y curaduría del contenido estético para redes sociales y mensajería, asegurando una comunicación clara y alineada a la identidad de la marca.
+                </li>
+            </ol>
+             <ul>
+                <li class="subtitulo">Transporte Rincón </li> 
+                <li>Venta y Asesoramiento (Mar 2021 – Dic 2021)
+                </li>
+            </ul>
+            <ol>
+                <li>Atención directa al público, asesoramiento al cliente y resolución de consultas operativas.</li>
+                <li>
+                    Manejo de sistemas de gestión digital, control de disponibilidad y administración de caja.
+                </li>
+            </ol>
+        </section>
     </main>
     <footer>
-<p>Cátedra Wischñevsky 2026</p>
-<ul>
-    <li> <a href="https://www.behance.net/ochoabruno">Behance</a> </li>
-    <li>
-        <a href="mailto:ochoab.unla@gmial.com">Correo electrónico</a>
-    </li>
-</ul>
+        <p>Cátedra Wischñevsky 2026</p>
+        <ul>
+            <li> <a href="https://www.behance.net/ochoabruno">Behance</a> </li>
+            <li>
+                <a href="mailto:ochoab.unla@gmail.com">Correo electrónico</a>
+            </li>
+        </ul>
     </footer>
 </body>
 

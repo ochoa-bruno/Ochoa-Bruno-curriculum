@@ -1,39 +1,112 @@
 @charset "UTF-8";
-   
+
 /*configuraciones generales*/
 
 @font-face {
-        font-family: Montserrat Regular;
-        src: url(fonts/Montserrat-Bold.ttf) format(truetype);
-        font-weight: normal;
-        font-style: normal;
+    font-family: "Montserrat Regular";
+    src: url(fonts/Montserrat-Bold.ttf) format("truetype");
+    font-weight: normal;
+    font-style: normal;
+}
 
-    }
-   @font-face {
-    font-family: Montserrat Bold;
-    src: url(fonts/Montserrat-Bold.ttf)format(truetype);
+@font-face {
+    font-family: "Montserrat Bold";
+    src: url(fonts/Montserrat-Bold.ttf)format("truetype");
     font-weight: bold;
     font-style: normal;
-   } 
-   @font-face {
-    font-family: Montserrat Italic;
-    src: url(fonts/Montserrat-Italic.ttf) format(truetype);
-    font-weight:normal;
-font-style: italic;
-   }
-   @font-face {
-    font-family: Montserrat Light;
-    src: url(fonts/Montserrat-Light.ttf) format(truetype);
+}
+
+@font-face {
+    font-family: "Montserrat Italic";
+    src: url(fonts/Montserrat-Italic.ttf) format("truetype");
+    font-weight: normal;
+    font-style: italic;
+}
+
+@font-face {
+    font-family: "Montserrat Light";
+    src: url(fonts/Montserrat-Light.ttf) format("truetype");
     font-weight: light;
     font-style: normal
-   }
-   @font-face {
-    font-family: Montserrat Medium;
-    src: url(fonts/Montserrat-Medium.ttf) format(truetype);
-    font-weight: medium;
+}
+
+@font-face {
+    font-family: "Montserrat Medium";
+    src: url(fonts/Montserrat-Medium.ttf) format("truetype");
+    font-weight: 500;
     font-style: normal;
-   }
-   @font-face {
-    font-family: Montserrat Semibold;
-    src: url(fonts/Montserrat-SemiBold.ttf) format;
-   }
+}
+
+@font-face {
+    font-family: "Montserrat Semibold";
+    src: url(fonts/Montserrat-SemiBold.ttf) format("truetype");
+    font-weight: normal;
+    font-style: normal;
+}
+
+* {
+    font-family: 'Alegreya', serif;
+    font-weight: normal;
+    font-size: 1rem;
+    color: rgb(26, 26, 26);
+    list-style: none;
+    text-decoration: none;
+}
+
+body {
+    background-color: rgb(211, 243, 247);
+      margin: 0%;
+}
+
+/*aplicaciones*/
+
+nav a{
+    font-family: "Montserrat Semibold", sans-serif;
+    font-weight: normal;
+    font-size: 1rem;
+    color:rgb(1, 67, 1)
+}
+
+nav{
+    text-align: center;
+}
+
+p{
+    text-wrap:unset;
+}
+
+h1 {
+    font-family: "Montserrat Bold", sans-serif;
+    font-weight: bold;
+    font-size: 5rem;
+    color: beige
+}
+
+h2{
+    font-family: "Montserrat Bold", sans-serif;
+   font-weight: normal;
+   font-size: 2.5rem;
+   color:rgb(1, 67, 1)
+}
+
+#bajada{
+    font-family: "Montserrat Italic", sans-serif;
+    font-weight: normal;
+    font-size: 1rem;
+    color: beige;
+}
+#hero{
+    background-image: url(img/foto-sobremi.jpg);
+    background-size: cover;
+    background-position:center;
+    height: 830px;
+    width: 100%;
+}
+
+.subtitulo{
+    font-family: 'Alegreya', serif;
+    font-weight: bolder;
+    font-size: 1rem;
+    text-decoration: underline;
+    color: rgb(17, 10, 117);
+}
