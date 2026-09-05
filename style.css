@@ -203,7 +203,7 @@ li a {
     list-style-position: inside;
 }
 
-/*linea de tiempo*/
+/*linea de tiempo (para realizar esta sección consulté la documentación de MDN Web Docs (https://developer.mozilla.org) y me apoyé en Claude IA para corregir y entender el funcionamiento de las propiedades)*/
 .timeline {
     list-style: none;
     padding: 0;
