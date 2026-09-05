@@ -12,13 +12,15 @@
 
 <body>
     <header>
-     <nav>
-        <a href="#">Sobre mi</a>
-        <a href="#">Estudios</a>
-        <a href="#">Habilidades</a>
-        <a href="#">Experiencia</a>
-        <a href="#">Contacto</a>
-        </nav>
+        <div class="contenedor-nav">
+            <nav>
+                <a href="#">Sobre mi</a>
+                <a href="#">Estudios</a>
+                <a href="#">Habilidades</a>
+                <a href="#">Experiencia</a>
+                <a href="#">Contacto</a>
+            </nav>
+        </div>
     </header>
     <main>
         <section id="hero">
@@ -27,22 +29,33 @@
         </section>
         <section>
             <h2>Sobre mi</h2>
-            <p>Estudiante de cuarto año de la licenciatura en Diseño y Comunicación Visual en la Universidad Nacional de Lanús. Me interesa mucho la tipografía, sobre todo su proceso de diseño y siempre busco maneras de incorporar nuevo conocimiento.</p>
-            <img src="img/foto-header.jpg" alt="Foto de Bruno Ochoa" height="50%" width="50%">
+            <p>Estudiante de cuarto año de la Licenciatura en Diseño y Comunicación Visual en la Universidad Nacional de
+                Lanús. Me interesa especialmente la tipografía, tanto desde su proceso de diseño como desde sus
+                posibilidades dentro de diferentes proyectos de comunicación visual. También tengo interés en el diseño
+                editorial, la construcción de identidades visuales y la experimentación gráfica. Me considero una
+                persona curiosa y comprometida con el aprendizaje, siempre buscando incorporar nuevos conocimientos,
+                explorar herramientas y ampliar mis recursos para abordar cada proyecto de manera creativa y consciente.
+            </p>
+            <h3>Algunos trabajos destacados</h3>
+            <div class="flex-container">
+                <img src="img/trabajo-destacado1.jpg" height="250">
+                <img src="img/trabajo-destacado2.jpg" height="250">
+                <img src="img/trabajo-destacado3.png" height="250">
+                <img src="img/trabajo-destacado4.png" height="250">
+            </div>
+            <!--Duda: A los flex-items, ¿siempre hay que asignarles la clase=flex-item? ¿O solo si quiero trabajarlos por separado con propiedades como align-self?-->
         </section>
         <section>
             <h2>Estudios</h2>
-            <ul>
-                <li class="subtitulo">Licenciatura en Diseño y Comunicación Visual</li>
-                <li>Univerisdad Nacional de Lanús | En curso</li>
-<!--Duda: en este caso el texto "Universidad Nacional de Lanús... ¿esta bien ubicado en un < li>, o iría en un < p>?-->
-            </ul>
+            <h3 class="subtitulo">Licenciatura en Diseño y Comunicación Visual</h3>
+            <p>Universidad Nacional de Lanús | En curso</p>
         </section>
         <section>
             <h2>Habilidades</h2>
-            <ul>
+            <ul class="habilidades-flex">
                 <li>Adobe Creative Cloud: Illustrator, Photoshop, InDesign</li>
-                <li>Otros: Canva, conocimientos básicos de HTML/CSS</li>
+                <li>Canva</li>
+                <li>Conocimientos básicos de HTML/CSS</li>
                 <li>Diseño editorial</li>
                 <li>Diseño tipográfico</li>
                 <li>Identidad visual / Branding</li>
@@ -50,68 +63,61 @@
         </section>
         <section>
             <h2>Experiencia</h2>
-            <ul>
-                <li class="subtitulo">Diseñador Creativo Freelance </li> 
-                <li>Proyectos independientes(Enero 2023 – Actualidad)
+            <ul class="timeline">
+                <li class="timeline-item">
+                    <h3 class="subtitulo">Diseñador Creativo Freelance</h3>
+                    <h3 class="fecha">Proyectos independientes (Enero 2023 – Actualidad)</h3>
+                    <p>Diseño y optimización de piezas gráficas para redes sociales (Instagram/Facebook) para pequeños
+                        comercios y emprendimientos, mejorando su consistencia visual.</p>
+                    <p>Creación de material promocional apto para imprenta (folletos, flyers, packaging y cartelería),
+                        realizando el armado de originales y control de archivos en varios formatos.</p>
+                    <p>Asesoramiento directo a clientes independientes para traducir sus necesidades comerciales en
+                        soluciones estéticas y funcionales.</p>
+                </li>
+
+                <li class="timeline-item">
+                    <h3 class="subtitulo">Nimara Artesanal</h3>
+                    <h3 class="fecha">Gestión Comercial y Comunicación Visual (Dic 2025 - Actualidad)</h3>
+                    <p>Gestión integral del emprendimiento, control de calidad visual y atención personalizada.</p>
+                    <p>Gestión y curaduría del contenido estético para redes sociales y mensajería.</p>
+                    <p>Coordinación de logística, organización de stock y optimización del flujo de entregas a clientes.
+                    </p>
+                </li>
+
+                <li class="timeline-item">
+                    <h3 class="subtitulo">Estudio Girasol</h3>
+                    <h3 class="fecha">Gestión Comercial y Comunicación Visual (Feb 2021 – Ene 2022)</h3>
+                    <p>Gestión integral del emprendimiento, participando activamente en la cadena de producción, control
+                        de calidad visual y atención personalizada.</p>
+                    <p>Gestión y curaduría del contenido estético para redes sociales y mensajería, asegurando una
+                        comunicación clara y alineada a la identidad de la marca.</p>
+                </li>
+
+                <li class="timeline-item">
+                    <h3 class="subtitulo">Transporte Rincón</h3>
+                    <h3 class="fecha">Venta y Asesoramiento (Mar 2021 – Dic 2021)</h3>
+                    <p>Atención directa al público, asesoramiento al cliente y resolución de consultas operativas.</p>
+                    <p>Manejo de sistemas de gestión digital, control de disponibilidad y administración de caja.</p>
                 </li>
             </ul>
-            <ol>
-                <li>Diseño y optimización de piezas gráficas para redes sociales (Instagram/Facebook) para pequeños comercios y emprendimientos, mejorando su consistencia visual.</li>
-                <li>
-                    Creación de material promocional apto para imprenta (folletos, flyers, packaging y cartelería), realizando el armado de originales y control de archivos en varios formatos.
-                </li>
-                <li>
-                    Asesoramiento directo a clientes independientes para traducir sus necesidades comerciales en soluciones estéticas y funcionales.
-                </li>
-            </ol>
-            <ul>
-                <li class="subtitulo">Nimara Artesanal </li> 
-                <li>Gestión Comercial y Comunicación Visual (Dic 2025 - Actualidad)
-                </li>
-            </ul>
-             <ol>
-                <li>
-                    Gestión integral del emprendimiento, control de calidad visual y atención personalizada</li>
-                <li>
-                    Gestión y curaduría del contenido estético para redes sociales y mensajería.
-                </li>
-                <li>
-                    Coordinación de logística, organización de stock y optimización del flujo de entregas a clientes.
-                </li>
-            </ol>
-            <ul>
-                <li class="subtitulo">Estudio Girasol </li> 
-                <li>Gestión Comercial y Comunicación Visual (Feb 2021 – Ene 2022)
-                </li>
-            </ul>
-            <ol>
-                <li>Gestión integral del emprendimiento, participando activamente en la cadena de producción, control de calidad visual y atención personalizada</li>
-                <li>
-                    Gestión y curaduría del contenido estético para redes sociales y mensajería, asegurando una comunicación clara y alineada a la identidad de la marca.
-                </li>
-            </ol>
-             <ul>
-                <li class="subtitulo">Transporte Rincón </li> 
-                <li>Venta y Asesoramiento (Mar 2021 – Dic 2021)
-                </li>
-            </ul>
-            <ol>
-                <li>Atención directa al público, asesoramiento al cliente y resolución de consultas operativas.</li>
-                <li>
-                    Manejo de sistemas de gestión digital, control de disponibilidad y administración de caja.
-                </li>
-            </ol>
         </section>
     </main>
-    <footer>
-        <p>Cátedra Wischñevsky 2026</p>
-        <ul>
-            <li> <a href="https://www.behance.net/ochoabruno">Behance</a> </li>
-            <li>
-                <a href="mailto:ochoab.unla@gmail.com">Correo electrónico</a>
-            </li>
-        </ul>
-    </footer>
+   <footer>
+    <h2>Contacto</h2>
+
+    <ul class="contacto-lista">
+        <li class="contacto-item">
+            <img src="img/behance.png" height="20">
+            <a href="https://www.behance.net/ochoabruno">Behance</a>
+        </li>
+        <li class="contacto-item">
+            <img src="img/correo.png" height="25">
+            <a href="mailto:ochoab.unla@gmail.com">Correo electrónico</a>
+        </li>
+    </ul>
+
+    <p>Cátedra Wischñevsky 2026</p>
+</footer>
 </body>
 
 </html>

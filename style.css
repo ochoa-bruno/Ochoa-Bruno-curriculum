@@ -44,69 +44,226 @@
     font-style: normal;
 }
 
+@font-face {
+    font-family: "Sligoil Micro Bold";
+    src: url(fonts/Sligoil-MicroBold.ttf) format("truetype");
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: "Sligoil Micro";
+    src: url(fonts/Sligoil-Micro.ttf) format("truetype");
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: "Sligoil Micro Medium";
+    src: url(fonts/Sligoil-MicroMedium.ttf) format("truetype");
+    font-weight: normal;
+    font-style: normal;
+}
+
 * {
     font-family: 'Alegreya', serif;
     font-weight: normal;
     font-size: 1rem;
     color: rgb(26, 26, 26);
-    list-style: none;
     text-decoration: none;
+    margin: 0;
+    padding: 0;
 }
 
 body {
-    background-color: rgb(211, 243, 247);
-      margin: 0%;
+    background-color: #095c09;
+    margin: 0;
 }
 
 /*aplicaciones*/
 
-nav a{
+nav a {
     font-family: "Montserrat Semibold", sans-serif;
     font-weight: normal;
     font-size: 1rem;
-    color:rgb(1, 67, 1)
+    color: #095c09;
 }
 
-nav{
+header {
+    display: flex;
+    justify-content: flex-end;
+    background-color: #f5f5dc;
+}
+
+nav {
     text-align: center;
+    display: flex;
+    padding: 10px;
+    background-color: #f5f5dc;
+    gap: 30px;
 }
 
-p{
-    text-wrap:unset;
+.contenedor-nav {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    width: 100vw;
+    max-width: 1200px;
+}
+
+p {
+    text-wrap: pretty;
+    color: #f5f5dc;
+    margin: 10px 0 20px;
+    padding-left: 10px;
+    width: 689px;
 }
 
 h1 {
-    font-family: "Montserrat Bold", sans-serif;
+    font-family: "Sligoil Micro Bold", sans-serif;
     font-weight: bold;
     font-size: 5rem;
-    color: beige
+    color: #f5f5dc;
+    padding: 36px;
+    height: 10px;
 }
 
-h2{
-    font-family: "Montserrat Bold", sans-serif;
-   font-weight: normal;
-   font-size: 2.5rem;
-   color:rgb(1, 67, 1)
+h2 {
+    font-family: "Sligoil Micro", sans-serif;
+    font-weight: normal;
+    font-size: 2.5rem;
+    color: #f5f5dc;
+    margin: 30px 10px 5px;
 }
 
-#bajada{
+h3 {
+    font-family: "Alegreya", serif;
+    font-weight: bold;
+    font-size: 1rem;
+    color: #f5f5dc;
+    padding: 10px;
+}
+
+ul li {
+    color: #f5f5dc;
+    padding-left: 10px;
+    width: 689px;
+}
+
+li a {
+    color: #f5f5dc;
+    padding: 10px 10px 0;
+}
+
+#bajada {
     font-family: "Montserrat Italic", sans-serif;
     font-weight: normal;
     font-size: 1rem;
     color: beige;
+    padding: 15px 36px 0;
 }
-#hero{
-    background-image: url(img/foto-sobremi.jpg);
+
+#hero {
+    background-image: url(img/foto-hero.png);
     background-size: cover;
-    background-position:center;
+    background-position: center;
     height: 830px;
+    margin: 0;
     width: 100%;
 }
 
-.subtitulo{
-    font-family: 'Alegreya', serif;
+.subtitulo {
+    font-family: 'Sligoil Micro', sans-serif;
     font-weight: bolder;
     font-size: 1rem;
     text-decoration: underline;
-    color: rgb(17, 10, 117);
+    color: #f5f5dc;
+    padding: 30px 10px 0;
+}
+
+.flex-container {
+    height: 250px;
+    width: 1080px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+}
+
+.flex-container img {
+    border-radius: 12px;
+}
+
+.habilidades-flex {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    height: 100px;
+    gap: 10px 40px;
+    list-style: circle;
+    list-style-position: inside;
+}
+
+/*linea de tiempo*/
+.timeline {
+    list-style: none;
+    padding: 0;
+    margin-left: 20px;
+    position: relative;
+}
+
+.timeline::before {
+    content: "";
+    position: absolute;
+    left: 8px;
+    top: 0;
+    bottom: 0;
+    width: 2px;
+    background-color: #f5f5dc;
+}
+
+.timeline-item {
+    position: relative;
+    padding-left: 40px;
+    margin-bottom: 40px;
+}
+
+/* círculo marcador */
+.timeline-item::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 30px;
+    width: 18px;
+    height: 18px;
+    background-color: #f5f5dc;
+    border-radius: 50%;
+    z-index: 1;
+}
+
+.timeline-item h3 {
+    text-decoration: underline;
+    margin-bottom: 5px;
+}
+
+.timeline-item .fecha {
+    font-weight: bold;
+    text-decoration: none;
+    margin-bottom: 10px;
+}
+
+.timeline-item p {
+    margin-bottom: 8px;
+}
+
+.contacto-lista {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.contacto-item {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 12px;
 }
