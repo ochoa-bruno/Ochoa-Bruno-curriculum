@@ -22,10 +22,6 @@ Probado en una resolución de pantalla de 1920x1080.
 * Experiencia — línea de tiempo de trabajos y proyectos
 * Contacto — enlaces a Behance y correo electrónico
 
-## La línea de tiempo de la sección Experiencia
-No usa flexbox: se resuelve con position: relative / absolute para ubicar la línea vertical y los círculos marcadores (para realizar esta sección me apoyé en Claude IA y consulté la documentación
-de MDN Web Docs (https://developer.mozilla.org) para corregir y entender el funcionamiento de las propiedades)
-
 ## Posibles mejoras futuras
 * Pulido general de la estética (espaciados, jerarquía visual y detalles de diseño)
   
