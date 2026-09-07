@@ -77,7 +77,6 @@
 
 body {
     background-color: #095c09;
-    margin: 0;
 }
 
 /*aplicaciones*/
@@ -86,20 +85,20 @@ nav a {
     font-family: "Montserrat Semibold", sans-serif;
     font-weight: normal;
     font-size: 1rem;
-    color: #095c09;
+    color: #f5f5dc;
 }
 
 header {
     display: flex;
     justify-content: flex-end;
-    background-color: #f5f5dc;
+    background-color: #6b8e4e;
 }
 
 nav {
     text-align: center;
     display: flex;
     padding: 10px;
-    background-color: #f5f5dc;
+    background-color: #6b8e4e;
     gap: 30px;
 }
 
@@ -107,16 +106,17 @@ nav {
     display: flex;
     align-items: center;
     justify-content: flex-end;
-    width: 100vw;
+    width: 100%;
     max-width: 1200px;
 }
 
 p {
     text-wrap: pretty;
     color: #f5f5dc;
-    margin: 10px 0 20px;
-    padding-left: 10px;
-    width: 689px;
+    margin: 0px 10px 20px;
+    padding-left: 0px;
+    max-width: 933px;
+    width: 100%;
 }
 
 h1 {
@@ -124,8 +124,7 @@ h1 {
     font-weight: bold;
     font-size: 5rem;
     color: #f5f5dc;
-    padding: 36px;
-    height: 10px;
+    padding: 20px 0 10px 36px
 }
 
 h2 {
@@ -133,7 +132,7 @@ h2 {
     font-weight: normal;
     font-size: 2.5rem;
     color: #f5f5dc;
-    margin: 30px 10px 5px;
+    margin: 30px 0px 5px;
 }
 
 h3 {
@@ -147,7 +146,8 @@ h3 {
 ul li {
     color: #f5f5dc;
     padding-left: 10px;
-    width: 689px;
+    max-width: 400px;
+    width: 100%;
 }
 
 li a {
@@ -160,7 +160,8 @@ li a {
     font-weight: normal;
     font-size: 1rem;
     color: beige;
-    padding: 15px 36px 0;
+    padding: 0 36px 0;
+    margin: 0;
 }
 
 #hero {
@@ -172,7 +173,7 @@ li a {
     width: 100%;
 }
 
-.subtitulo {
+.subtitulo-hab {
     font-family: 'Sligoil Micro', sans-serif;
     font-weight: bolder;
     font-size: 1rem;
@@ -183,14 +184,19 @@ li a {
 
 .flex-container {
     height: 250px;
-    width: 1080px;
+    max-width: 1080px;
+    width: 100%;
     display: flex;
     flex-direction: row;
-    justify-content: space-around;
+    justify-content: space-between;
+    gap: 20px;
 }
 
 .flex-container img {
     border-radius: 12px;
+    width: 200px;
+    height: 200px;
+    min-width: 0;
 }
 
 .habilidades-flex {
@@ -199,71 +205,112 @@ li a {
     flex-wrap: wrap;
     height: 100px;
     gap: 10px 40px;
-    list-style: circle;
+    list-style: disc;
     list-style-position: inside;
 }
 
-/*linea de tiempo (para realizar esta sección me apoyé en Claude IA y consulté la documentación de MDN Web Docs (https://developer.mozilla.org) para corregir y entender el funcionamiento de las propiedades)*/
-.timeline {
+ul {
+    padding-left: 50px;
     list-style: none;
-    padding: 0;
-    margin-left: 20px;
-    position: relative;
 }
 
-.timeline::before {
-    content: "";
-    position: absolute;
-    left: 8px;
-    top: 0;
-    bottom: 0;
-    width: 2px;
-    background-color: #f5f5dc;
+footer {
+    margin-top: 40px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
 }
 
-.timeline-item {
-    position: relative;
-    padding-left: 40px;
-    margin-bottom: 40px;
+.footer-contenido {
+    display: flex;
+    align-items: center;
+    gap: 40px;
 }
 
-/* círculo marcador */
-.timeline-item::before {
-    content: "";
-    position: absolute;
-    left: 0;
-    top: 30px;
-    width: 18px;
-    height: 18px;
-    background-color: #f5f5dc;
-    border-radius: 50%;
-    z-index: 1;
-}
-
-.timeline-item h3 {
-    text-decoration: underline;
-    margin-bottom: 5px;
-}
-
-.timeline-item .fecha {
-    font-weight: bold;
-    text-decoration: none;
-    margin-bottom: 10px;
-}
-
-.timeline-item p {
-    margin-bottom: 8px;
-}
-
-.contacto-lista {
+.footer-contenido ul {
+    display: flex;
+    align-items: center;
+    gap: 20px;
     list-style: none;
-    padding: 0;
     margin: 0;
 }
 
-.contacto-item {
+.footer-contenido li {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+footer h2 {
+    padding: 30px;
+}
+
+#catedra {
     display: flex;
     align-items: center;
     gap: 10px;
-    margin-bottom: 12px;
+    white-space: nowrap;
+    margin-left: 40px;
+}
+
+
+#sobre-mi {
+    background-color: #f5f5dc;
+    border-radius: 40px;
+    margin: 60px 10px 10px 10px;
+    padding: 10px 30px;
+    max-height: 475px;
+}
+
+
+#sobre-mi h2,
+#sobre-mi h3,
+#sobre-mi p {
+    color: #095c09;
+    margin: 10px 0;
+}
+
+#sobre-mi h2 {
+    padding: 20px 40px 0 0;
+    margin: 0;
+}
+
+#estudios h2,
+#estudios h3,
+#estudios p {
+    padding: 10px 40px 0 30px;
+    margin: 10px 10px;
+}
+
+#estudios {
+    margin-top: 60px;
+}
+
+#estudios h2 {
+    border-bottom: 3px solid #6b8e4e;
+}
+
+#habilidades {
+    margin-top: 60px;
+}
+
+#habilidades h2,
+#habilidades ul {
+    padding: 10px 40px 0 30px;
+    margin: 10px 10px;
+}
+
+#habilidades h2 {
+    border-bottom: 3px solid #6b8e4e;
+}
+
+#experiencia {
+    background-color: #6b8e4e;
+    border-radius: 40px;
+    margin: 60px 10px 10px 10px;
+    padding: 10px 30px;
+}
+
+#experiencia ul {
+    list-style-type: disc;
 }

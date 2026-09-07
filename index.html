@@ -5,6 +5,7 @@
     <meta charset="utf-8" />
     <title>Curriculum Vitae</title>
     <link rel="stylesheet" href="style.css">
+    <link rel="icon" type="image/x-icon" href="favicon.ico">
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Alegreya:ital,wght@0,400..900;1,400..900&display=swap');
     </style>
@@ -27,7 +28,7 @@
             <h1>Bruno Ochoa</h1>
             <h2 id="bajada">Estudiante de Diseño y Comunicación Visual</h2>
         </section>
-        <section>
+        <section id="sobre-mi">
             <h2>Sobre mi</h2>
             <p>Estudiante de cuarto año de la Licenciatura en Diseño y Comunicación Visual en la Universidad Nacional de
                 Lanús. Me interesa especialmente la tipografía, tanto desde su proceso de diseño como desde sus
@@ -38,19 +39,19 @@
             </p>
             <h3>Algunos trabajos destacados</h3>
             <div class="flex-container">
-                <img src="img/trabajo-destacado1.jpg" height="250">
-                <img src="img/trabajo-destacado2.jpg" height="250">
-                <img src="img/trabajo-destacado3.png" height="250">
-                <img src="img/trabajo-destacado4.png" height="250">
+                <img src="img/trabajo-destacado1.jpg" height="200px" width="200px" alt="Proyecto: revista científica">
+                <img src="img/trabajo-destacado2.jpg" height="200px" width="200px" alt="Proyecto: libro Aves de la Patagonia">
+                <img src="img/trabajo-destacado3.png" height="200px" width="200px" alt="Proyecto: Festival de Cine">
+                <img src="img/trabajo-destacado4.png" height="200px" width="230px" 
+                alt="Proyecto: Cronograma para evento">
             </div>
-            <!--Duda: A los flex-items, ¿siempre hay que asignarles la clase=flex-item? ¿O solo si quiero trabajarlos por separado con propiedades como align-self?-->
         </section>
-        <section>
+        <section id="estudios">
             <h2>Estudios</h2>
             <h3 class="subtitulo">Licenciatura en Diseño y Comunicación Visual</h3>
             <p>Universidad Nacional de Lanús | En curso</p>
         </section>
-        <section>
+        <section id="habilidades">
             <h2>Habilidades</h2>
             <ul class="habilidades-flex">
                 <li>Adobe Creative Cloud: Illustrator, Photoshop, InDesign</li>
@@ -61,12 +62,12 @@
                 <li>Identidad visual / Branding</li>
             </ul>
         </section>
-        <section>
+        <section id="experiencia">
             <h2>Experiencia</h2>
-            <ul class="timeline">
-                <li class="timeline-item">
-                    <h3 class="subtitulo">Diseñador Creativo Freelance</h3>
-                    <h3 class="fecha">Proyectos independientes (Enero 2023 – Actualidad)</h3>
+            <ul>
+                <li>
+                    <h3 class="subtitulo.hab">Diseñador Creativo Freelance</h3>
+                    <h3>Proyectos independientes (Enero 2023 – Actualidad)</h3>
                     <p>Diseño y optimización de piezas gráficas para redes sociales (Instagram/Facebook) para pequeños
                         comercios y emprendimientos, mejorando su consistencia visual.</p>
                     <p>Creación de material promocional apto para imprenta (folletos, flyers, packaging y cartelería),
@@ -75,27 +76,27 @@
                         soluciones estéticas y funcionales.</p>
                 </li>
 
-                <li class="timeline-item">
-                    <h3 class="subtitulo">Nimara Artesanal</h3>
-                    <h3 class="fecha">Gestión Comercial y Comunicación Visual (Dic 2025 - Actualidad)</h3>
+                <li>
+                    <h3 class="subtitulo-hab">Nimara Artesanal</h3>
+                    <h3>Gestión Comercial y Comunicación Visual (Dic 2025 - Actualidad)</h3>
                     <p>Gestión integral del emprendimiento, control de calidad visual y atención personalizada.</p>
                     <p>Gestión y curaduría del contenido estético para redes sociales y mensajería.</p>
                     <p>Coordinación de logística, organización de stock y optimización del flujo de entregas a clientes.
                     </p>
                 </li>
 
-                <li class="timeline-item">
-                    <h3 class="subtitulo">Estudio Girasol</h3>
-                    <h3 class="fecha">Gestión Comercial y Comunicación Visual (Feb 2021 – Ene 2022)</h3>
+                <li>
+                    <h3 class="subtitulo-hab">Estudio Girasol</h3>
+                    <h3>Gestión Comercial y Comunicación Visual (Feb 2021 – Ene 2022)</h3>
                     <p>Gestión integral del emprendimiento, participando activamente en la cadena de producción, control
                         de calidad visual y atención personalizada.</p>
                     <p>Gestión y curaduría del contenido estético para redes sociales y mensajería, asegurando una
                         comunicación clara y alineada a la identidad de la marca.</p>
                 </li>
 
-                <li class="timeline-item">
-                    <h3 class="subtitulo">Transporte Rincón</h3>
-                    <h3 class="fecha">Venta y Asesoramiento (Mar 2021 – Dic 2021)</h3>
+                <li>
+                    <h3 class="subtitulo-hab">Transporte Rincón</h3>
+                    <h3>Venta y Asesoramiento (Mar 2021 – Dic 2021)</h3>
                     <p>Atención directa al público, asesoramiento al cliente y resolución de consultas operativas.</p>
                     <p>Manejo de sistemas de gestión digital, control de disponibilidad y administración de caja.</p>
                 </li>
@@ -103,20 +104,22 @@
         </section>
     </main>
    <footer>
-    <h2>Contacto</h2>
-
-    <ul class="contacto-lista">
-        <li class="contacto-item">
-            <img src="img/behance.png" height="20">
+     <div class="footer-contenido">
+    <h2>¡Hablemos!</h2>
+    <ul>
+        <li>
+            <img src="img/behance.png" height="20px" width="32px" alt="logo behance">
             <a href="https://www.behance.net/ochoabruno">Behance</a>
         </li>
-        <li class="contacto-item">
-            <img src="img/correo.png" height="25">
+        <li>
+            <img src="img/correo.png" height="30px" width="30px" alt="logo correo electrónico">
             <a href="mailto:ochoab.unla@gmail.com">Correo electrónico</a>
         </li>
     </ul>
-
+    </div>
+ <div id="catedra">
     <p>Cátedra Wischñevsky 2026</p>
+    </div>
 </footer>
 </body>
 
