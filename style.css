@@ -209,8 +209,8 @@ li a {
     list-style-position: inside;
 }
 
-ul {
-    padding-left: 50px;
+/*linea de tiempo*/
+.timeline {
     list-style: none;
 }
 

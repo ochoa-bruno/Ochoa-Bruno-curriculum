@@ -24,4 +24,6 @@ Probado en una resolución de pantalla de 1920x1080.
 
 ## Posibles mejoras futuras
 * Pulido general de la estética (espaciados, jerarquía visual y detalles de diseño)
+* Aplicar flexbox en modo complejo :P
+* Intentar incorporar Figma
   
