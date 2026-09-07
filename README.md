@@ -9,7 +9,7 @@ Este sitio fue diseñado y probado principalmente para pantallas de escritorio,
 con un ancho de referencia de 1200px
 Probado en una resolución de pantalla de 1920x1080.
 
-## Tecnologías
+## Tecnologías en Visual Studio Code
 * HTML5
 * CSS
 * Flexbox (navegación, galería de imágenes, distribución de habilidades, íconos de contacto)
@@ -21,9 +21,4 @@ Probado en una resolución de pantalla de 1920x1080.
 * Habilidades — listado de herramientas y competencias
 * Experiencia — línea de tiempo de trabajos y proyectos
 * Contacto — enlaces a Behance y correo electrónico
-
-## Posibles mejoras futuras
-* Pulido general de la estética (espaciados, jerarquía visual y detalles de diseño)
-* Aplicar flexbox en modo complejo :P
-* Intentar incorporar Figma
   
