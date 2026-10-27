@@ -3,124 +3,192 @@
 
 <head>
     <meta charset="utf-8" />
-    <title>Curriculum Vitae</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bruno Ochoa - Portfolio</title>
     <link rel="stylesheet" href="style.css">
     <link rel="icon" type="image/x-icon" href="favicon.ico">
-    <style>
-        @import url('https://fonts.googleapis.com/css2?family=Alegreya:ital,wght@0,400..900;1,400..900&display=swap');
-    </style>
 </head>
 
 <body>
+    <!-- 1. HEADER (Navegacion) -->
     <header>
-        <div class="contenedor-nav">
-            <nav>
-                <a href="#">Sobre mi</a>
-                <a href="#">Estudios</a>
-                <a href="#">Habilidades</a>
-                <a href="#">Experiencia</a>
-                <a href="#">Contacto</a>
-            </nav>
-        </div>
+        <nav>
+            <a href="#home">Home</a>
+            <a href="#experiencia">Experiencia</a>
+            <a href="#proyectos">Proyectos</a>
+            <a href="#contacto">Contacto</a>
+        </nav>
     </header>
     <main>
-        <section id="hero">
-            <h1>Bruno Ochoa</h1>
-            <h2 id="bajada">Estudiante de Diseño y Comunicación Visual</h2>
-        </section>
-        <section id="sobre-mi">
-            <h2>Sobre mi</h2>
-            <p>Estudiante de cuarto año de la Licenciatura en Diseño y Comunicación Visual en la Universidad Nacional de
-                Lanús. Me interesa especialmente la tipografía, tanto desde su proceso de diseño como desde sus
-                posibilidades dentro de diferentes proyectos de comunicación visual. También tengo interés en el diseño
-                editorial, la construcción de identidades visuales y la experimentación gráfica. Me considero una
-                persona curiosa y comprometida con el aprendizaje, siempre buscando incorporar nuevos conocimientos,
-                explorar herramientas y ampliar mis recursos para abordar cada proyecto de manera creativa y consciente.
-            </p>
-            <h3>Algunos trabajos destacados</h3>
-            <div class="flex-container">
-                <img src="img/trabajo-destacado1.jpg" height="200px" width="200px" alt="Proyecto: revista científica">
-                <img src="img/trabajo-destacado2.jpg" height="200px" width="200px" alt="Proyecto: libro Aves de la Patagonia">
-                <img src="img/trabajo-destacado3.png" height="200px" width="200px" alt="Proyecto: Festival de Cine">
-                <img src="img/trabajo-destacado4.png" height="200px" width="230px" 
-                alt="Proyecto: Cronograma para evento">
+        <!-- 2. SECTION HERO -->
+        <section class="section-hero">
+            <div class="container-hero">
+                <h1>Bruno Ochoa</h1>
+                <p class="bajada-hero">Diseño y Comunicación Visual</p>
             </div>
         </section>
-        <section id="estudios">
+
+        <!-- 3. SECTION PRESENTACIÓN -->
+        <section class="section-presentacion">
+            <div class="presentacion">
+                <div class="section-titulo">
+                    <h2>Bienvenidx :)</h2>
+                    <div class="linea"></div>
+                </div>
+                <p class="presentacion-texto">
+                    Hola, soy Bruno. Diseño piezas gráficas y editoriales, y disfruto de ocuparme de todo el recorrido:
+                    ordenar el proceso y llevar cada proyecto hasta su maquetación final. Este portfolio reúne algunos
+                    de los trabajos donde destacan mis habilidades y herramientas.
+                </p>
+        </section>
+
+        <!-- 4. SECTION SOBRE MÍ -->
+        <input type="checkbox" id="abrir-perfil" class="toggle visualmente-oculto">
+
+  <section class="sobre-mi" aria-labelledby="sobre-mi-titulo">
+
+    <div class="tarjeta">
+      <!-- Contenido de la tarjeta: cuando se abre -->
+      <div class="tarjeta__panel" id="perfil-panel">
+        <p>
+          Estudiante de cuarto año de la Licenciatura en Diseño y Comunicación Visual
+          en la Universidad Nacional de Lanús. Me interesa especialmente la tipografía,
+          tanto desde su proceso de diseño como desde sus posibilidades dentro de
+          diferentes proyectos de comunicación visual. También tengo interés en el
+          diseño editorial, la construcción de identidades visuales y la experimentación
+          gráfica. Me considero una persona curiosa y comprometida con el aprendizaje,
+          siempre buscando incorporar nuevos conocimientos, explorar herramientas y
+          ampliar mis recursos para abordar cada proyecto de manera creativa y consciente.
+        </p>
+      </div>
+
+      <label class="tarjeta__pestana" for="abrir-perfil">
+        <span class="tarjeta__flecha" aria-hidden="true">&gt;</span>
+        <span class="visualmente-oculto">Mostrar u ocultar perfil profesional</span>
+      </label>
+    </div>
+
+    <!-- Texto al costado -->
+    <div class="lateral">
+      <p class="lateral__pista" aria-hidden="true">Tocá para leer sobre mi perfil</p>
+      <h2 class="lateral__titulo" id="sobre-mi-titulo">Mi perfil profesional</h2>
+    </div>
+
+  </section>
+
+  <!-- 5. SECTION ESTUDIOS -->
+    <section class="section-estudios">
+    <div class="div-section-estudios">
+        
+        <!-- Título de la sección con línea -->
+        <div class="section-title">
             <h2>Estudios</h2>
-            <h3 class="subtitulo">Licenciatura en Diseño y Comunicación Visual</h3>
-            <p>Universidad Nacional de Lanús | En curso</p>
-        </section>
-        <section id="habilidades">
-            <h2>Habilidades</h2>
-            <ul class="habilidades-flex">
-                <li>Adobe Creative Cloud: Illustrator, Photoshop, InDesign</li>
-                <li>Canva</li>
-                <li>Conocimientos básicos de HTML/CSS</li>
-                <li>Diseño editorial</li>
-                <li>Diseño tipográfico</li>
-                <li>Identidad visual / Branding</li>
-            </ul>
-        </section>
-        <section id="experiencia">
-            <h2>Experiencia</h2>
-            <ul>
-                <li>
-                    <h3 class="subtitulo.hab">Diseñador Creativo Freelance</h3>
-                    <h3>Proyectos independientes (Enero 2023 – Actualidad)</h3>
-                    <p>Diseño y optimización de piezas gráficas para redes sociales (Instagram/Facebook) para pequeños
-                        comercios y emprendimientos, mejorando su consistencia visual.</p>
-                    <p>Creación de material promocional apto para imprenta (folletos, flyers, packaging y cartelería),
-                        realizando el armado de originales y control de archivos en varios formatos.</p>
-                    <p>Asesoramiento directo a clientes independientes para traducir sus necesidades comerciales en
-                        soluciones estéticas y funcionales.</p>
-                </li>
+            <div class="line-1"></div>
+        </div>
 
-                <li>
-                    <h3 class="subtitulo-hab">Nimara Artesanal</h3>
-                    <h3>Gestión Comercial y Comunicación Visual (Dic 2025 - Actualidad)</h3>
-                    <p>Gestión integral del emprendimiento, control de calidad visual y atención personalizada.</p>
-                    <p>Gestión y curaduría del contenido estético para redes sociales y mensajería.</p>
-                    <p>Coordinación de logística, organización de stock y optimización del flujo de entregas a clientes.
+        <!-- Contenido principal -->
+        <div class="container-estudios">
+            
+            <!-- Texto izquierdo -->
+            <div class="estudios-info">
+                <h3>Licenciatura en Diseño y Comunicación Visual</h3>
+                <p>Universidad Nacional de Lanús | En curso</p>
+            </div>
+
+            <!-- Barra de progreso y porcentaje -->
+            <div class="container-barra">
+                <div class="barra-carga">
+                    <div class="barra-progreso"></div>
+                </div>
+                <span class="porcentaje-texto">55% completado</span>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+  <!-- 6. SECTION HABILIDADES -->
+    <section class="section-habilidades">
+        <div class="section-title">
+            <h2 class="habilidades-title">Habilidades y software</h2>
+            <div class="line-1"></div>
+        </div>
+        <div class="tarjetas-habilidades">
+            <div class="tarjetas-izq">
+                <div class="card-tipografia">
+                    <h2 class="card">Tipografía</h2>
+                    <p class="card">Diseño de tipografíaFontLab</p>
+                </div>
+                <div class="card-prototipado">
+                    <h2 class="card">UI/Prototipado</h2>
+                    <p class="card">
+                        Visual Studio Code
+                        · CSS
+                        · HTML5
+                        Figma
                     </p>
-                </li>
+                </div>
+            </div>
+            <div class="tarjetas-der">
+                <div class="card-edicion">
+                    <h2 class="card">Edición/Maquetación</h2>
+                    <p class="card">Adobe InDesign Adobe Acrobat</p>
+                </div>
+                <div class="card-grafica">
+                    <h2 class="card">Gráfica</h2>
+                    <p class="card">Adobe Photoshop Adobe Illustrator</p>
+                </div>
+            </div>
+        </div>
+    </section>
 
-                <li>
-                    <h3 class="subtitulo-hab">Estudio Girasol</h3>
-                    <h3>Gestión Comercial y Comunicación Visual (Feb 2021 – Ene 2022)</h3>
-                    <p>Gestión integral del emprendimiento, participando activamente en la cadena de producción, control
-                        de calidad visual y atención personalizada.</p>
-                    <p>Gestión y curaduría del contenido estético para redes sociales y mensajería, asegurando una
-                        comunicación clara y alineada a la identidad de la marca.</p>
-                </li>
+        <!-- 7. SECTION PROYECTOS -->
+        <section class="section-proyectos">
+            <div class="section-titulo">
+                <h2>Mis proyectos</h2>
+                <div class="linea"></div>
+            </div>
+            <div class="div-section-proyectos">
 
-                <li>
-                    <h3 class="subtitulo-hab">Transporte Rincón</h3>
-                    <h3>Venta y Asesoramiento (Mar 2021 – Dic 2021)</h3>
-                    <p>Atención directa al público, asesoramiento al cliente y resolución de consultas operativas.</p>
-                    <p>Manejo de sistemas de gestión digital, control de disponibilidad y administración de caja.</p>
-                </li>
-            </ul>
+                <!-- CONTENEDOR DEL SLIDER -->
+                <div class="slider-container">
+                    <div class="slider-track">
+                        <img src="img/proyecto-destacado.jpg" alt="Proyecto Fahrenheit - Vista 1" class="slide active">
+                        <img src="img/proyecto-destacado-02.jpg" alt="Proyecto Patagonia Alada - Vista 2" class="slide">
+                        <img src="img/proyecto-descatado-03.jpg" alt="Proyecto Qué Pizza - Vista 3" class="slide">
+                        <img src="img/proyecto-destacado-04.jpg" alt="Proyecto Herbarium - Vista 4" class="slide">
+                    </div>
+                </div>
+                <div class="div-proyectos">
+                    <a href="#proyectos" class="button-proyectos">Ver más</a>
+                    <p>
+                        Podés conocer más de mi trabajo visitando mi selección de proyectos destacados. Son
+                        piezas de
+                        distintos formatos, desde publicaciones hasta cartelería. Te invito a recorrerlos.
+                    </p>
+                </div>
+            </div>
         </section>
     </main>
-   <footer>
-     <div class="footer-contenido">
-    <h2>¡Hablemos!</h2>
-    <ul>
-        <li>
-            <img src="img/behance.png" height="20px" width="32px" alt="logo behance">
-            <a href="https://www.behance.net/ochoabruno">Behance</a>
-        </li>
-        <li>
-            <img src="img/correo.png" height="30px" width="30px" alt="logo correo electrónico">
-            <a href="mailto:ochoab.unla@gmail.com">Correo electrónico</a>
-        </li>
-    </ul>
-    </div>
- <div id="catedra">
-    <p>Cátedra Wischñevsky 2026</p>
-    </div>
-</footer>
+    <!-- 8. FOOTER -->
+    <footer class="footer">
+        <div class="div-tenes-un-proyecto">
+            <h2>¿Tenés un proyecto?</h2>
+            <button class="button-contacto">Hablemos :)</button>
+        </div>
+        <div class="div-contactos">
+            <div class="div-email">
+                <img src="img/icono-email.svg" alt="logo correo electrónico">
+                <a href="mailto:ochoab.unla@gmail.com">E-mail</a>
+            </div>
+            <div class="div-behance">
+                <img src="img/icono-behance.svg" alt="logo behance">
+                <a href="https://www.behance.net/ochoabruno">Behance</a>
+            </div>
+        </div>
+        <p>Buenos Aires, Argentina | 2026</p>
+    </footer>
+
 </body>
 
 </html>

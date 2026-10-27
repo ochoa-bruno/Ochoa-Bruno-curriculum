@@ -4,7 +4,7 @@
 
 @font-face {
     font-family: "Montserrat Regular";
-    src: url(fonts/Montserrat-Bold.ttf) format("truetype");
+    src: url(fonts/Montserrat-Regular.ttf) format("truetype");
     font-weight: normal;
     font-style: normal;
 }
@@ -66,56 +66,26 @@
 }
 
 * {
-    font-family: 'Alegreya', serif;
+    font-family: "Montserrat Regular", sans-serif;
     font-weight: normal;
     font-size: 1rem;
     color: rgb(26, 26, 26);
     text-decoration: none;
     margin: 0;
     padding: 0;
+    box-sizing: border-box;
 }
 
+/*APLICACIONES GENERALES*/
 body {
+    overflow-x: hidden;
     background-color: #095c09;
-}
-
-/*aplicaciones*/
-
-nav a {
-    font-family: "Montserrat Semibold", sans-serif;
-    font-weight: normal;
-    font-size: 1rem;
-    color: #f5f5dc;
-}
-
-header {
-    display: flex;
-    justify-content: flex-end;
-    background-color: #6b8e4e;
-}
-
-nav {
-    text-align: center;
-    display: flex;
-    padding: 10px;
-    background-color: #6b8e4e;
-    gap: 30px;
-}
-
-.contenedor-nav {
-    display: flex;
-    align-items: center;
-    justify-content: flex-end;
-    width: 100%;
-    max-width: 1200px;
 }
 
 p {
     text-wrap: pretty;
     color: #f5f5dc;
-    margin: 0px 10px 20px;
-    padding-left: 0px;
-    max-width: 933px;
+    max-width: 755px;
     width: 100%;
 }
 
@@ -136,181 +106,409 @@ h2 {
 }
 
 h3 {
-    font-family: "Alegreya", serif;
+    font-family: "Montserrat Bold", sans-serif;
     font-weight: bold;
     font-size: 1rem;
     color: #f5f5dc;
-    padding: 10px;
 }
 
-ul li {
-    color: #f5f5dc;
-    padding-left: 10px;
-    max-width: 400px;
+
+/*=====INDEX=====*/
+
+/*HEADER Y NAV*/
+header {
     width: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 10;
+    padding: 30px 50px
 }
 
-li a {
-    color: #f5f5dc;
-    padding: 10px 10px 0;
-}
-
-#bajada {
-    font-family: "Montserrat Italic", sans-serif;
-    font-weight: normal;
-    font-size: 1rem;
-    color: beige;
-    padding: 0 36px 0;
-    margin: 0;
-}
-
-#hero {
-    background-image: url(img/foto-hero.png);
-    background-size: cover;
-    background-position: center;
-    height: 830px;
-    margin: 0;
-    width: 100%;
-}
-
-.subtitulo-hab {
-    font-family: 'Sligoil Micro', sans-serif;
-    font-weight: bolder;
-    font-size: 1rem;
-    text-decoration: underline;
-    color: #f5f5dc;
-    padding: 30px 10px 0;
-}
-
-.flex-container {
-    height: 250px;
-    max-width: 1080px;
-    width: 100%;
+nav {
     display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    gap: 20px;
-}
-
-.flex-container img {
-    border-radius: 12px;
-    width: 200px;
-    height: 200px;
-    min-width: 0;
-}
-
-.habilidades-flex {
-    display: flex;
-    flex-direction: column;
-    flex-wrap: wrap;
-    height: 100px;
-    gap: 10px 40px;
-    list-style: disc;
-    list-style-position: inside;
-}
-
-/*linea de tiempo*/
-.timeline {
-    list-style: none;
-}
-
-footer {
-    margin-top: 40px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    width: 100%;
-}
-
-.footer-contenido {
-    display: flex;
-    align-items: center;
+    justify-content: flex-end;
     gap: 40px;
 }
 
-.footer-contenido ul {
+nav a {
+    font-family: 'Montserrat Bold', sans-serif;
+    font-size: 1rem;
+    color: #F5F5DC;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+/* efecto hover*/
+nav a:hover {
+    color: #D44B07;
+}
+
+/*HEADER Y NAV*/
+
+/*HERO*/
+.section-hero {
+    position: relative;
+    width: 100%;
+    height: 90vh;
+    background-image: url(img/img-hero.jpg);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    display: flex;
+    align-items: center;
+}
+
+.container-hero {
+    margin-left: 80px;
+    z-index: 5;
+    max-width: 500px;
+}
+
+.bajada-hero {
+    font-family: 'Montserrat Italic', sans-serif;
+    font-size: 1.3rem;
+    color: #F5F5DC;
+    font-weight: normal;
+    padding-left: 30px;
+}
+
+/*HERO*/
+
+/*PRESENTACION*/
+.presentacion {
+    max-width: 800px;
+}
+
+.section-presentacion {
+    width: 100%;
+    margin: 0px 0px 0px 80px;
+    padding: 40px 0px 50px 80px;
+    max-width: 800px;
+}
+
+.linea {
+    flex-grow: 1;
+    height: 3px;
+    background-color: #F5F5DC;
+}
+
+.section-titulo {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 25px;
+    margin-bottom: 25px;
+    max-width: 800px;
+}
+
+/*PRESENTACION*/
+
+/*SOBRE MI*/
+/*sigo investigando como resolverlo de la forma mas similar a lo hecho en Figma :(*/
+
+/*ESTUDIOS*/
+.section-estudios {
+    width: 100%;
+    margin-left: 80px;
+    padding: 50px 0px 50px 60px;
+    box-sizing: border-box;
+}
+
+/* Título de la sección */
+.section-estudios .section-title {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 25px;
+    margin-bottom: 40px;
+    max-width: 950px;
+}
+
+
+.section-estudios .section-title .line-1 {
+    flex-grow: 1;
+    height: 1.5px;
+    background-color: #F5F5DC;
+}
+
+/* Contenedor general que pone la info a la izq y la barra a la der */
+.container-estudios {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    max-width: 1100px;
+    gap: 40px;
+}
+
+/* --- BARRA DE CARGA --- */
+.container-barra {
     display: flex;
     align-items: center;
     gap: 20px;
-    list-style: none;
-    margin: 0;
 }
 
-.footer-contenido li {
-    display: flex;
-    align-items: center;
-    gap: 8px;
-}
-footer h2 {
-    padding: 30px;
+/* contenedor de barra */
+.barra-carga {
+    width: 250px;
+    height: 30px;
+    border: 2px solid #F5F5DC;
+    border-radius: 50px;
+    overflow: hidden;
+    background-color: rgba(0, 0, 0, 0.1);
+    box-sizing: border-box;
+    padding: 3px;
 }
 
-#catedra {
-    display: flex;
-    align-items: center;
-    gap: 10px;
+/* Relleno animado*/
+.barra-progreso {
+    width: 0%;
+    height: 100%;
+    background-color: #d35400;
+    border-radius: 50px;
+    /* Animación*/
+    animation: cargarBarra 1.5s cubic-bezier(0.25, 1, 0.5, 1) forwards;
+    animation: cargarBarra 2.5s ease-in-out infinite;
+}
+
+.porcentaje-texto {
+    font-family: 'Montserrat Bold', sans-serif;
+    font-size: 1.2rem;
+    color: #F5F5DC;
     white-space: nowrap;
-    margin-left: 40px;
 }
 
+/* Keyframes*/
+@keyframes cargarBarra {
+    0% {
+        width: 0%;
+    }
 
-#sobre-mi {
-    background-color: #f5f5dc;
-    border-radius: 40px;
-    margin: 60px 10px 10px 10px;
-    padding: 10px 30px;
-    max-height: 475px;
+    50% {
+        width: 55%;
+    }
+
+    100% {
+        width: 0%;
+    }
 }
 
-
-#sobre-mi h2,
-#sobre-mi h3,
-#sobre-mi p {
-    color: #095c09;
-    margin: 10px 0;
+/*HABILIDADES*/
+.section-habilidades {
+    width: 100%;
+    margin-left: 80px;
+    padding: 50px 0px 50px 60px;
 }
 
-#sobre-mi h2 {
-    padding: 20px 40px 0 0;
+/* Título de la sección*/
+.section-title {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 25px;
+    margin-bottom: 40px;
+    max-width: 950px;
+}
+
+.habilidades-title {
+    font-family: 'Sligoil Micro', sans-serif;
+    font-size: 2.2rem;
+    color: #F5F5DC;
+    margin: 0;
+    line-height: 1;
+    white-space: nowrap;
+}
+
+.section-title .line-1 {
+    flex-grow: 1;
+    height: 1.5px;
+    background-color: #F5F5DC;
+}
+
+/* Contenedor principal de tarjetas*/
+.tarjetas-habilidades {
+    display: flex;
+    gap: 30px;
+    max-width: 950px;
+}
+
+.tarjetas-izq,
+.tarjetas-der {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+}
+
+/* Estilo general de tarjetas */
+.card-tipografia,
+.card-prototipado,
+.card-edicion,
+.card-grafica {
+    background-color: #d35400;
+    color: #F5F5DC;
+    padding: 35px 40px;
+    border-radius: 70px;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+/* Títulos de tarjetas */
+.card-tipografia h2.card,
+.card-prototipado h2.card,
+.card-edicion h2.card,
+.card-grafica h2.card {
+    font-family: 'Sligoil Micro', sans-serif;
+    font-size: 2rem;
+    font-weight: normal;
+    margin: 0 0 20px 0;
+    color: #F5F5DC;
+}
+
+/* Textosdentro de las tarjetas */
+.card-tipografia p.card,
+.card-prototipado p.card,
+.card-edicion p.card,
+.card-grafica p.card {
+    font-family: 'Montserrat Regular', sans-serif;
+    font-size: 1.1rem;
+    line-height: 1.5;
+    margin: 0;
+    color: #F5F5DC;
+}
+
+/*HABILIDADES*/
+
+/*PROYECTOS*/
+.section-proyectos {
+    width: 100%;
+    margin-left: 80px;
+    padding: 50px 0px 50px 60px;
+    box-sizing: border-box;
+}
+
+/* Título de la sección */
+.section-proyectos .section-titulo {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 25px;
+    margin-bottom: 40px;
+    max-width: 950px;
+}
+
+.section-proyectos .section-titulo h2 {
+    font-family: 'Sligoil Micro', sans-serif;
+    font-size: 2.2rem;
+    color: #F5F5DC;
+    margin: 0;
+    line-height: 1;
+    white-space: nowrap;
+}
+
+.section-proyectos .section-titulo .linea {
+    flex-grow: 1;
+    height: 1.5px;
+    background-color: #F5F5DC;
+}
+
+/* Layout principal */
+.div-section-proyectos {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 50px;
+}
+
+/* --- VISOR DEL SLIDER --- */
+.slider-container {
+    width: 657px;
+    height: 493px;
+    border-radius: 20px;
+    overflow: hidden;
+    position: relative;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+    flex-shrink: 0;
+}
+
+.slider-track {
+    display: flex;
+    width: 2628px;
+    height: 100%;
+    animation: rotarSlider 16s infinite cubic-bezier(0.25, 1, 0.5, 1);
+}
+
+.slider-track img.slide {
+    width: 657px;
+    height: 493px;
+    object-fit: cover;
+    flex-shrink: 0;
+    border-radius: 20px;
+}
+
+/* --- KEYFRAMES --- */
+@keyframes rotarSlider {
+
+    0%,
+    20% {
+        transform: translateX(0);
+    }
+
+    25%,
+    45% {
+        transform: translateX(-657px);
+    }
+
+    50%,
+    70% {
+        transform: translateX(-1314px);
+    }
+
+    75%,
+    95% {
+        transform: translateX(-1971px);
+    }
+
+    100% {
+        transform: translateX(0);
+    }
+}
+
+/*botón y párrafo */
+.div-proyectos {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 25px;
+    max-width: 420px;
+}
+
+.button-proyectos {
+    background-color: #6B8E4E;
+    color: #F5F5DC;
+    font-family: 'Sligoil Micro Bold', sans-serif;
+    font-size: 1.25rem;
+    padding: 14px 35px;
+    border: none;
+    border-radius: 50px;
+    cursor: pointer;
+    transition: transform 0.2s ease, background-color 0.2s ease;
+}
+
+.button-proyectos:hover {
+    background-color: #d35400;
+    transform: translateY(-2px);
+}
+
+.div-proyectos p {
+    font-family: 'Montserrat Regular', sans-serif;
+    font-size: 1.05rem;
+    line-height: 1.6;
+    color: #F5F5DC;
     margin: 0;
 }
 
-#estudios h2,
-#estudios h3,
-#estudios p {
-    padding: 10px 40px 0 30px;
-    margin: 10px 10px;
-}
-
-#estudios {
-    margin-top: 60px;
-}
-
-#estudios h2 {
-    border-bottom: 3px solid #6b8e4e;
-}
-
-#habilidades {
-    margin-top: 60px;
-}
-
-#habilidades h2,
-#habilidades ul {
-    padding: 10px 40px 0 30px;
-    margin: 10px 10px;
-}
-
-#habilidades h2 {
-    border-bottom: 3px solid #6b8e4e;
-}
-
-#experiencia {
-    background-color: #6b8e4e;
-    border-radius: 40px;
-    margin: 60px 10px 10px 10px;
-    padding: 10px 30px;
-}
-
-#experiencia ul {
-    list-style-type: disc;
-}
+/*PROYECTOS*/
