@@ -76,32 +76,59 @@
     box-sizing: border-box;
 }
 
+:root {
+    --verde-oscuro: #095C09;
+    --verde-claro: #6B8E4E;
+    --crema: #F5F5DC;
+    --naranja: #D44B07;
+    --fuente-titulo: "Sligoil Micro", sans-serif;
+    /*tarjeta seccion sobre mi*/
+    --ancho-cerrado: 17rem;
+    --ancho-abierto: min(73vw, 87.5rem, calc(100vw - 30rem));
+    --alto-tarjeta: 25rem;
+    --radio: 4.5rem;
+    --separacion: 4rem;
+    --tam-titulo-lateral: 3rem;
+
+    --curva: cubic-bezier(0.22, 0.8, 0.3, 1);
+    --duracion: 450ms;
+}
+
 /*APLICACIONES GENERALES*/
 body {
     overflow-x: hidden;
-    background-color: #095c09;
+    background-color: var(--verde-oscuro);
 }
 
 p {
     text-wrap: pretty;
-    color: #f5f5dc;
+    color: var(--crema);
     max-width: 755px;
     width: 100%;
+}
+
+ul {
+    list-style: none;
+
+}
+
+li {
+    color: var(--crema);
 }
 
 h1 {
     font-family: "Sligoil Micro Bold", sans-serif;
     font-weight: bold;
-    font-size: 5rem;
-    color: #f5f5dc;
-    padding: 20px 0 10px 36px
+    font-size: 4rem;
+    color: var(--crema);
+    padding: 20px 0 10px 0
 }
 
 h2 {
     font-family: "Sligoil Micro", sans-serif;
     font-weight: normal;
     font-size: 2.5rem;
-    color: #f5f5dc;
+    color: var(--crema);
     margin: 30px 0px 5px;
 }
 
@@ -109,7 +136,7 @@ h3 {
     font-family: "Montserrat Bold", sans-serif;
     font-weight: bold;
     font-size: 1rem;
-    color: #f5f5dc;
+    color: var(--crema);
 }
 
 
@@ -118,12 +145,30 @@ h3 {
 /*HEADER Y NAV*/
 header {
     width: 100%;
-    position: absolute;
+    position: sticky;
     top: 0;
     left: 0;
     z-index: 10;
-    padding: 30px 50px
+    padding: 30px 50px;
+    margin-bottom: -110px;
+    background-color: transparent;
+    animation: fondo-nav linear both;
+    animation-timeline: scroll();
+    animation-range: 0 200px;
 }
+
+@supports (animation-timeline: scroll()) {
+    @keyframes fondo-nav {
+        from {
+            background-color: rgba(9, 92, 9, 0);
+        }
+
+        to {
+            background-color: rgba(9, 92, 9, 0.95);
+        }
+    }
+}
+
 
 nav {
     display: flex;
@@ -134,21 +179,19 @@ nav {
 nav a {
     font-family: 'Montserrat Bold', sans-serif;
     font-size: 1rem;
-    color: #F5F5DC;
+    color: var(--crema);
     text-decoration: none;
     transition: color 0.3s ease;
 }
 
 /* efecto hover*/
 nav a:hover {
-    color: #D44B07;
+    color: var(--naranja);
 }
 
-/*HEADER Y NAV*/
 
 /*HERO*/
 .section-hero {
-    position: relative;
     width: 100%;
     height: 90vh;
     background-image: url(img/img-hero.jpg);
@@ -168,12 +211,11 @@ nav a:hover {
 .bajada-hero {
     font-family: 'Montserrat Italic', sans-serif;
     font-size: 1.3rem;
-    color: #F5F5DC;
+    color: var(--crema);
     font-weight: normal;
     padding-left: 30px;
 }
 
-/*HERO*/
 
 /*PRESENTACION*/
 .presentacion {
@@ -190,7 +232,7 @@ nav a:hover {
 .linea {
     flex-grow: 1;
     height: 3px;
-    background-color: #F5F5DC;
+    background-color: var(--crema);
 }
 
 .section-titulo {
@@ -202,14 +244,132 @@ nav a:hover {
     max-width: 800px;
 }
 
-/*PRESENTACION*/
 
 /*SOBRE MI*/
-/*sigo investigando como resolverlo de la forma mas similar a lo hecho en Figma :(*/
+.sobre-mi {
+    display: flex;
+    align-items: center;
+    column-gap: var(--separacion);
+    padding-block: 4rem;
+    padding-inline-end: clamp(1.5rem, 6vw, 7rem);
+    background-color: var(--verde-oscuro);
+}
+
+/*details (tarjeta)*/
+.tarjeta {
+    position: relative;
+    width: var(--ancho-cerrado);
+    height: var(--alto-tarjeta);
+    background: var(--crema);
+    border-radius: 0 var(--radio) var(--radio) 0;
+    overflow: hidden;
+    transition: width var(--duracion) var(--curva);
+    flex-shrink: 0;
+}
+
+.tarjeta[open] {
+    width: var(--ancho-abierto);
+}
+
+/*summary (pestaña)*/
+.tarjeta-pestana {
+    position: absolute;
+    inset-block: 0;
+    inset-inline-end: 0;
+    width: var(--ancho-cerrado);
+    display: grid;
+    place-items: center;
+    list-style: none;
+    cursor: pointer;
+}
+
+.lateral {
+    flex: 1;
+    min-width: 0;
+}
+
+/*fundido */
+.lateral>* {
+    grid-area: 1 / 1;
+    transition: opacity 300ms ease, transform 300ms var(--curva);
+}
+
+.lateral-titulo {
+    opacity: 0;
+    transform: translateX(-1rem);
+}
+
+.tarjeta[open]+.lateral .lateral-pista {
+    opacity: 0;
+    transform: translateX(1rem);
+}
+
+.tarjeta[open]+.lateral .lateral-titulo {
+    opacity: 1;
+    transform: none;
+    transition-delay: 150ms;
+}
+
+.tarjeta-pestana::-webkit-details-marker {
+    display: none;
+}
+
+.tarjeta-pestana:focus-visible {
+    outline: 3px solid var(--naranja);
+    outline-offset: -6px;
+}
+
+.tarjeta-flecha {
+    width: 3.5rem;
+    height: auto;
+    transition: transform var(--duracion) var(--curva);
+}
+
+.tarjeta[open] .tarjeta-flecha {
+    transform: rotate(180deg);
+}
+
+/* hint*/
+@keyframes latido {
+
+    0%,
+    70%,
+    100% {
+        width: var(--ancho-cerrado);
+        margin-right: 0;
+    }
+
+    82% {
+        width: calc(var(--ancho-cerrado) + 1.25rem);
+        margin-right: -1.25rem;
+    }
+}
+
+.tarjeta:not([open]) {
+    animation: latido 1.5s var(--curva) 2s infinite;
+}
+
+.tarjeta:not([open]):hover {
+    animation: none;
+}
+
+.tarjeta-panel {
+    width: var(--ancho-abierto);
+    padding-block: 2rem;
+    display: flex;
+    align-items: center;
+    padding-inline: clamp(2rem, 8vw, 20.875rem) calc(var(--ancho-cerrado) + 1rem);
+}
+
+.tarjeta-panel p {
+    max-width: 47rem;
+    color: var(--verde-oscuro);
+}
+
 
 /*ESTUDIOS*/
 .section-estudios {
-    width: 100%;
+    width: 935px;
     margin-left: 80px;
     padding: 50px 0px 50px 60px;
     box-sizing: border-box;
@@ -226,13 +386,13 @@ nav a:hover {
 }
 
 
-.section-estudios .section-title .line-1 {
+.section-estudios .section-title .linea {
     flex-grow: 1;
     height: 1.5px;
-    background-color: #F5F5DC;
+    background-color: var(--crema);
 }
 
-/* Contenedor general que pone la info a la izq y la barra a la der */
+/* Contenedor general*/
 .container-estudios {
     display: flex;
     flex-direction: row;
@@ -253,7 +413,7 @@ nav a:hover {
 .barra-carga {
     width: 250px;
     height: 30px;
-    border: 2px solid #F5F5DC;
+    border: 2px solid var(--crema);
     border-radius: 50px;
     overflow: hidden;
     background-color: rgba(0, 0, 0, 0.1);
@@ -265,7 +425,7 @@ nav a:hover {
 .barra-progreso {
     width: 0%;
     height: 100%;
-    background-color: #d35400;
+    background-color: var(--naranja);
     border-radius: 50px;
     /* Animación*/
     animation: cargarBarra 1.5s cubic-bezier(0.25, 1, 0.5, 1) forwards;
@@ -275,7 +435,7 @@ nav a:hover {
 .porcentaje-texto {
     font-family: 'Montserrat Bold', sans-serif;
     font-size: 1.2rem;
-    color: #F5F5DC;
+    color: var(--crema);
     white-space: nowrap;
 }
 
@@ -296,7 +456,7 @@ nav a:hover {
 
 /*HABILIDADES*/
 .section-habilidades {
-    width: 100%;
+    width: 935px;
     margin-left: 80px;
     padding: 50px 0px 50px 60px;
 }
@@ -305,7 +465,7 @@ nav a:hover {
 .section-title {
     display: flex;
     flex-direction: row;
-    align-items: center;
+    align-items: left;
     gap: 25px;
     margin-bottom: 40px;
     max-width: 950px;
@@ -323,14 +483,15 @@ nav a:hover {
 .section-title .line-1 {
     flex-grow: 1;
     height: 1.5px;
-    background-color: #F5F5DC;
+    background-color: var(--crema);
 }
 
 /* Contenedor principal de tarjetas*/
 .tarjetas-habilidades {
     display: flex;
+    flex-direction: row;
     gap: 30px;
-    max-width: 950px;
+    max-width: 100%;
 }
 
 .tarjetas-izq,
@@ -346,26 +507,14 @@ nav a:hover {
 .card-prototipado,
 .card-edicion,
 .card-grafica {
-    background-color: #d35400;
-    color: #F5F5DC;
+    background-color: var(--naranja);
+    color: var(--crema);
     padding: 35px 40px;
     border-radius: 70px;
     box-sizing: border-box;
     display: flex;
     flex-direction: column;
     justify-content: center;
-}
-
-/* Títulos de tarjetas */
-.card-tipografia h2.card,
-.card-prototipado h2.card,
-.card-edicion h2.card,
-.card-grafica h2.card {
-    font-family: 'Sligoil Micro', sans-serif;
-    font-size: 2rem;
-    font-weight: normal;
-    margin: 0 0 20px 0;
-    color: #F5F5DC;
 }
 
 /* Textosdentro de las tarjetas */
@@ -377,16 +526,16 @@ nav a:hover {
     font-size: 1.1rem;
     line-height: 1.5;
     margin: 0;
-    color: #F5F5DC;
+    color: var(--crema);
 }
 
-/*HABILIDADES*/
 
 /*PROYECTOS*/
 .section-proyectos {
-    width: 100%;
-    margin-left: 80px;
-    padding: 50px 0px 50px 60px;
+    width: calc(100% - 80px);
+    max-width: 935px;
+    margin: 0px 0px 0px 80px;
+    padding: 40px 0px 50px 80px;
     box-sizing: border-box;
 }
 
@@ -403,7 +552,7 @@ nav a:hover {
 .section-proyectos .section-titulo h2 {
     font-family: 'Sligoil Micro', sans-serif;
     font-size: 2.2rem;
-    color: #F5F5DC;
+    color: var(--crema);
     margin: 0;
     line-height: 1;
     white-space: nowrap;
@@ -412,7 +561,7 @@ nav a:hover {
 .section-proyectos .section-titulo .linea {
     flex-grow: 1;
     height: 1.5px;
-    background-color: #F5F5DC;
+    background-color: var(--crema);
 }
 
 /* Layout principal */
@@ -425,31 +574,29 @@ nav a:hover {
 
 /* --- VISOR DEL SLIDER --- */
 .slider-container {
-    width: 657px;
-    height: 493px;
+    flex: 0 1 657px;
     border-radius: 20px;
+    aspect-ratio: 657 / 493;
     overflow: hidden;
     position: relative;
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
-    flex-shrink: 0;
 }
 
 .slider-track {
     display: flex;
-    width: 2628px;
+    width: 400%;
     height: 100%;
     animation: rotarSlider 16s infinite cubic-bezier(0.25, 1, 0.5, 1);
 }
 
 .slider-track img.slide {
-    width: 657px;
-    height: 493px;
+    width: 25%;
+    height: 100%;
     object-fit: cover;
     flex-shrink: 0;
-    border-radius: 20px;
 }
 
-/* --- KEYFRAMES --- */
+/* - KEYFRAMES -- */
 @keyframes rotarSlider {
 
     0%,
@@ -459,17 +606,17 @@ nav a:hover {
 
     25%,
     45% {
-        transform: translateX(-657px);
+        transform: translateX(-25%);
     }
 
     50%,
     70% {
-        transform: translateX(-1314px);
+        transform: translateX(-50%);
     }
 
     75%,
     95% {
-        transform: translateX(-1971px);
+        transform: translateX(-75%);
     }
 
     100% {
@@ -480,6 +627,7 @@ nav a:hover {
 /*botón y párrafo */
 .div-proyectos {
     display: flex;
+    flex: 1 1 16rem;
     flex-direction: column;
     align-items: flex-start;
     gap: 25px;
@@ -487,8 +635,8 @@ nav a:hover {
 }
 
 .button-proyectos {
-    background-color: #6B8E4E;
-    color: #F5F5DC;
+    background-color: var(--verde-claro);
+    color: var(--crema);
     font-family: 'Sligoil Micro Bold', sans-serif;
     font-size: 1.25rem;
     padding: 14px 35px;
@@ -499,16 +647,498 @@ nav a:hover {
 }
 
 .button-proyectos:hover {
-    background-color: #d35400;
+    background-color: var(--naranja);
     transform: translateY(-2px);
 }
 
-.div-proyectos p {
-    font-family: 'Montserrat Regular', sans-serif;
-    font-size: 1.05rem;
-    line-height: 1.6;
-    color: #F5F5DC;
-    margin: 0;
+/*FOOTER*/
+.footer {
+    background-color: var(--verde-claro);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 48px;
+    padding: 24px 80px;
 }
 
-/*PROYECTOS*/
+/*título + botón */
+.div-tenes-un-proyecto {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 20px;
+}
+
+.div-tenes-un-proyecto h2 {
+    font-size: 1, 5rem;
+}
+
+.boton-contacto {
+    background-color: var(--naranja);
+    color: var(--crema);
+    font-family: 'Sligoil Micro Bold', sans-serif;
+    font-size: 2rem;
+    padding: 8px 24px;
+    border-radius: 50px;
+    text-decoration: none;
+}
+
+.boton-contacto:hover {
+    background-color: var(--verde-oscuro);
+}
+
+/*contactos y ubicación */
+.div-info {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    gap: 8px;
+}
+
+.div-contactos {
+    display: flex;
+    align-items: center;
+    gap: 48px;
+}
+
+.contacto {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    color: var(--crema);
+    text-decoration: none;
+}
+
+.contacto img {
+    width: 44px;
+}
+
+.contacto:hover {
+    color: var(--verde-oscuro);
+}
+
+
+/*======PROYECTOS======*/
+/*HEADER Y NAV*/
+.proyectos-header {
+    position: sticky;
+    top: 0;
+    z-index: 10;
+    width: 100%;
+    padding: 18px 50px;
+    background-color: #6B8E4E;
+    border-radius: 0 0 40px 40px;
+    animation: none;
+    margin-bottom: 0;
+}
+
+/*PROYECTOS DESTACADOS*/
+.section-proyectos-destacados {
+    margin-left: 80px;
+    padding: 40px 80px 50px 80px;
+    box-sizing: border-box;
+}
+
+.section-proyectos-destacados .section-title {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+    margin-bottom: 48px;
+}
+
+.materia-año {
+    font-family: "Montserrat Italic", sans-serif;
+}
+
+/*GALERÍAS*/
+article {
+    background-color: var(--verde-claro);
+    padding: 40px;
+    border-radius: 50px;
+    margin-top: 40px;
+    margin-bottom: 40px;
+}
+
+.galeria {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 16px;
+    margin-top: 20px;
+}
+
+.img-hover {
+    border-radius: 20px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.img-hover a {
+    display: block;
+}
+
+.img-hover img {
+    width: 100%;
+    aspect-ratio: 4 / 3;
+    object-fit: cover;
+    display: block;
+    border-radius: 20px;
+}
+
+.img-hover:hover {
+    transform: scale(1.05);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+    position: relative;
+    z-index: 1;
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .img-hover {
+        transition: none;
+    }
+}
+
+/*VISTA DETALLE GALERIA*/
+.pagina-detalle header {
+    background-color: transparent;
+    animation: none;
+}
+
+.pagina-detalle {
+    background-color: var(--verde-claro);
+}
+
+.pagina-detalle img {
+    border-radius: 50px;
+}
+
+.pagina-detalle video {
+    border-radius: 50px;
+}
+
+.centrado {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/*CONTACTO*/
+.contacto-container {
+    display: flex;
+    align-items: left;
+}
+
+.section-contacto {
+    background-color: var(--crema);
+    padding: 40px 160px;
+    box-sizing: border-box;
+}
+
+.section-contacto .section-title {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    margin-bottom: 32px;
+}
+
+/* Textos en verde oscuro*/
+.section-contacto h2,
+.section-contacto p,
+.section-contacto label {
+    color: var(--verde-oscuro);
+}
+
+.section-contacto p {
+    font-size: 0.9rem;
+}
+
+/*FORMULARIO*/
+.section-contacto form {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    width: 100%;
+    max-width: 1000px;
+}
+
+/*etiqueta arriba + campo abajp */
+.section-contacto form>div {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.section-contacto label {
+    font-family: 'Montserrat Bold', sans-serif;
+    font-size: 0.85rem;
+    color: var(--verde-oscuro);
+}
+
+.section-contacto input,
+.section-contacto textarea {
+    width: 100%;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 20px;
+    background-color: var(--verde-claro);
+    font: inherit;
+    box-sizing: border-box;
+}
+
+.section-contacto textarea {
+    min-height: 140px;
+    padding: 20px;
+    border-radius: 40px;
+    resize: none;
+}
+
+.section-contacto input::placeholder,
+.section-contacto textarea::placeholder {
+    color: var(--crema);
+    opacity: 0.8;
+}
+
+.section-contacto input:focus,
+.section-contacto textarea:focus {
+    outline: 3px solid var(--naranja);
+    outline-offset: 2px;
+}
+
+.section-contacto form button {
+    align-self: flex-start;
+}
+
+/*MEDIA 500PX INDEX*/
+@media screen and (max-width: 500px)  {
+    
+
+    body {
+        overflow-x: hidden !important;
+        width: 100% !important;
+        margin: 0 !important;
+        padding: 0 !important;
+    }
+
+    /* secciones */
+    .section-presentacion,
+    .section-estudios,
+    .section-habilidades,
+    .section-proyectos,
+    .sobre-mi,
+    .footer {
+        width: 100% !important;
+        max-width: 100% !important;
+        margin-left: 0 !important;
+        margin-right: 0 !important;
+        padding-left: 20px !important;
+        padding-right: 20px !important;
+        box-sizing: border-box !important;
+    }
+
+    /* Header y nav*/
+    header {
+        padding: 10px 16px !important;
+        margin-bottom: 0 !important;
+    }
+
+    nav {
+        justify-content: space-between !important;
+        gap: 12px !important;
+    }
+
+    nav a {
+        font-size: 0.75rem !important;
+    }
+
+    /* Hero */
+    .section-hero {
+        height: 65vh !important;
+    }
+
+    .container-hero {
+        margin-left: 20px !important;
+        max-width: 100% !important;
+        padding-right: 20px !important;
+    }
+
+    .section-hero h1 {
+        font-size: 2rem !important;
+    }
+
+    .bajada-hero {
+        font-size: 0.9rem !important;
+        padding-left: 5px !important;
+    }
+
+    /* h2 */
+    h2, 
+    .section-title h2, 
+    .section-titulo h2, 
+    .section-proyectos .section-titulo h2 {
+        font-size: 1.3rem !important;
+        margin: 15px 0 5px 0 !important;
+    }
+
+    .sobre-mi {
+        display: flex !important;
+        flex-direction: column !important;
+        align-items: stretch !important;
+        gap: 15px !important;
+        width: 100% !important;
+    }
+
+    /* Transformamos el <details> en una tarjeta fija abierta */
+    .sobre-mi details.tarjeta {
+        display: block !important;
+        width: 100% !important;
+        height: auto !important;
+        min-height: 150px !important;
+        background: var(--crema) !important;
+        border-radius: 20px !important;
+        padding: 20px !important;
+        box-sizing: border-box !important;
+    }
+
+    /* Ocultamos la flecha o botón de la pestaña */
+    .sobre-mi .tarjeta-pestana {
+        display: none !important;
+    }
+
+    /* Forzamos el panel y el texto interno con color oscuro visible */
+    .sobre-mi .tarjeta-panel,
+    .sobre-mi .tarjeta-panel p {
+        display: block !important;
+        visibility: visible !important;
+        opacity: 1 !important;
+        font-size: 0.9rem !important;
+        color: #123719 !important; /* Color seguro directo para asegurar lectura */
+        line-height: 1.5 !important;
+        width: 100% !important;
+        height: auto !important;
+        background: transparent !important;
+        margin: 0 !important;
+        padding: 0 !important;
+    }
+
+    /* Ordenamos el bloque lateral con el título arriba */
+    .sobre-mi .lateral {
+        order: -1 !important;
+        width: 100% !important;
+    }
+
+    .sobre-mi .lateral-pista {
+        display: none !important;
+    }
+
+    .sobre-mi .lateral-titulo {
+        display: block !important;
+        visibility: visible !important;
+        opacity: 1 !important;
+        font-size: 1.3rem !important;
+        font-weight: bold !important;
+        color: var(--crema) !important;
+        margin-bottom: 10px !important;
+    }
+    /* Estudios */
+    .section-estudios .container-estudios {
+        display: flex !important;
+        flex-direction: column !important;
+        align-items: flex-start !important;
+        gap: 12px !important;
+        width: 100% !important;
+    }
+
+    .section-estudios .container-barra {
+        display: flex !important;
+        align-items: center !important;
+        justify-content: space-between !important;
+        width: 100% !important;
+        gap: 10px !important;
+    }
+
+    .section-estudios .barra-carga {
+        flex: 1 !important;
+        width: auto !important;
+        height: 24px !important;
+    }
+
+    .section-habilidades .tarjetas-habilidades,
+    .section-habilidades .tarjetas-izq,
+    .section-habilidades .tarjetas-der {
+        display: flex !important;
+        flex-direction: column !important;
+        align-items: center !important; /* Centra las tarjetas horizontalmente */
+        width: 100% !important;
+        gap: 15px !important;
+    }
+
+    .section-habilidades .card-tipografia,
+    .section-habilidades .card-prototipado,
+    .section-habilidades .card-edicion,
+    .section-habilidades .card-grafica,
+    .habilidades .tarjeta,
+    .habilidades .tarjeta-panel {
+        display: flex !important;
+        flex-direction: column !important;
+        align-items: center !important; /* Centra los hijos internos de la tarjeta */
+        text-align: center !important;     /* Centra el texto */
+        width: 100% !important;
+        max-width: 100% !important;
+        padding: 20px !important;
+        border-radius: 25px !important;
+        box-sizing: border-box !important;
+    }
+
+    /* Forzamos el centrado de los textos y títulos internos */
+    .habilidades p,
+    .habilidades li,
+    .section-habilidades h2 {
+        text-align: center !important;
+        margin-left: auto !important;
+        margin-right: auto !important;
+    }
+
+    .section-habilidades .card-tipografia h2,
+    .section-habilidades .card-prototipado h2,
+    .section-habilidades .card-edicion h2,
+    .section-habilidades .card-grafica h2 {
+        font-size: 1.2rem !important;
+        text-align: center !important;
+    }
+    /* Proyectos y Slider adaptados */
+    .section-proyectos .div-section-proyectos {
+        display: flex !important;
+        flex-direction: column !important;
+        align-items: stretch !important;
+        width: 100% !important;
+        gap: 15px !important;
+    }
+
+    .section-proyectos .slider-container {
+        width: 100% !important;
+        max-width: 100% !important;
+        height: auto !important;
+        aspect-ratio: 657 / 493 !important;
+    }
+
+    .section-proyectos .div-proyectos {
+        width: 100% !important;
+        max-width: 100% !important;
+    }
+
+    .section-proyectos .div-proyectos p {
+        order: -1 !important;
+        font-size: 0.9rem !important;
+    }
+
+    /* Footer */
+    .footer {
+        flex-direction: column !important;
+        align-items: flex-start !important;
+        gap: 15px !important;
+        padding: 24px 20px !important;
+    }
+
+    .footer .div-info {
+        align-items: flex-start !important;
+        width: 100% !important;
+    }
+}

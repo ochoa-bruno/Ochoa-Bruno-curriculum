@@ -7,16 +7,17 @@
     <title>Bruno Ochoa - Portfolio</title>
     <link rel="stylesheet" href="style.css">
     <link rel="icon" type="image/x-icon" href="favicon.ico">
+    
 </head>
 
 <body>
     <!-- 1. HEADER (Navegacion) -->
     <header>
         <nav>
-            <a href="#home">Home</a>
-            <a href="#experiencia">Experiencia</a>
-            <a href="#proyectos">Proyectos</a>
-            <a href="#contacto">Contacto</a>
+            <a href="index.html">Home</a>
+            <a href="experiencia.html">Experiencia</a>
+            <a href="proyectos.html">Proyectos</a>
+            <a href="proyectos.html#contacto">Contacto</a>
         </nav>
     </header>
     <main>
@@ -40,107 +41,112 @@
                     ordenar el proceso y llevar cada proyecto hasta su maquetación final. Este portfolio reúne algunos
                     de los trabajos donde destacan mis habilidades y herramientas.
                 </p>
+            </div>
         </section>
+        <!-- 4. SECTION SOBRE MI -->
+        <section class="sobre-mi">
 
-        <!-- 4. SECTION SOBRE MÍ -->
-        <input type="checkbox" id="abrir-perfil" class="toggle visualmente-oculto">
+            <details class="tarjeta" open>
+                <summary class="tarjeta-pestana">
+                    <img class="tarjeta-flecha" src="img/boton-cerrar.svg" alt="Perfil profesional">
+                </summary>
 
-  <section class="sobre-mi" aria-labelledby="sobre-mi-titulo">
-
-    <div class="tarjeta">
-      <!-- Contenido de la tarjeta: cuando se abre -->
-      <div class="tarjeta__panel" id="perfil-panel">
-        <p>
-          Estudiante de cuarto año de la Licenciatura en Diseño y Comunicación Visual
-          en la Universidad Nacional de Lanús. Me interesa especialmente la tipografía,
-          tanto desde su proceso de diseño como desde sus posibilidades dentro de
-          diferentes proyectos de comunicación visual. También tengo interés en el
-          diseño editorial, la construcción de identidades visuales y la experimentación
-          gráfica. Me considero una persona curiosa y comprometida con el aprendizaje,
-          siempre buscando incorporar nuevos conocimientos, explorar herramientas y
-          ampliar mis recursos para abordar cada proyecto de manera creativa y consciente.
-        </p>
-      </div>
-
-      <label class="tarjeta__pestana" for="abrir-perfil">
-        <span class="tarjeta__flecha" aria-hidden="true">&gt;</span>
-        <span class="visualmente-oculto">Mostrar u ocultar perfil profesional</span>
-      </label>
-    </div>
-
-    <!-- Texto al costado -->
-    <div class="lateral">
-      <p class="lateral__pista" aria-hidden="true">Tocá para leer sobre mi perfil</p>
-      <h2 class="lateral__titulo" id="sobre-mi-titulo">Mi perfil profesional</h2>
-    </div>
-
-  </section>
-
-  <!-- 5. SECTION ESTUDIOS -->
-    <section class="section-estudios">
-    <div class="div-section-estudios">
-        
-        <!-- Título de la sección con línea -->
-        <div class="section-title">
-            <h2>Estudios</h2>
-            <div class="line-1"></div>
-        </div>
-
-        <!-- Contenido principal -->
-        <div class="container-estudios">
-            
-            <!-- Texto izquierdo -->
-            <div class="estudios-info">
-                <h3>Licenciatura en Diseño y Comunicación Visual</h3>
-                <p>Universidad Nacional de Lanús | En curso</p>
-            </div>
-
-            <!-- Barra de progreso y porcentaje -->
-            <div class="container-barra">
-                <div class="barra-carga">
-                    <div class="barra-progreso"></div>
-                </div>
-                <span class="porcentaje-texto">55% completado</span>
-            </div>
-
-        </div>
-    </div>
-</section>
-
-  <!-- 6. SECTION HABILIDADES -->
-    <section class="section-habilidades">
-        <div class="section-title">
-            <h2 class="habilidades-title">Habilidades y software</h2>
-            <div class="line-1"></div>
-        </div>
-        <div class="tarjetas-habilidades">
-            <div class="tarjetas-izq">
-                <div class="card-tipografia">
-                    <h2 class="card">Tipografía</h2>
-                    <p class="card">Diseño de tipografíaFontLab</p>
-                </div>
-                <div class="card-prototipado">
-                    <h2 class="card">UI/Prototipado</h2>
-                    <p class="card">
-                        Visual Studio Code
-                        · CSS
-                        · HTML5
-                        Figma
+                <div class="tarjeta-panel">
+                    <p>
+                        Estudiante de cuarto año de la Licenciatura en Diseño y Comunicación Visual
+                        en la Universidad Nacional de Lanús. Me interesa especialmente la tipografía,
+                        tanto desde su proceso de diseño como desde sus posibilidades dentro de
+                        diferentes proyectos de comunicación visual. También tengo interés en el
+                        diseño editorial, la construcción de identidades visuales y la experimentación
+                        gráfica. Me considero una persona curiosa y comprometida con el aprendizaje,
+                        siempre buscando incorporar nuevos conocimientos, explorar herramientas y
+                        ampliar mis recursos para abordar cada proyecto de manera creativa.
                     </p>
                 </div>
+            </details>
+
+            <div class="lateral">
+                <h2 class="lateral-pista">Tocá para leer sobre mi perfil</h2>
+                <h2 class="lateral-titulo">Mi perfil profesional</h2>
             </div>
-            <div class="tarjetas-der">
-                <div class="card-edicion">
-                    <h2 class="card">Edición/Maquetación</h2>
-                    <p class="card">Adobe InDesign Adobe Acrobat</p>
+        </section>
+
+        <!-- 5. SECTION ESTUDIOS -->
+        <section class="section-estudios">
+            <div class="div-section-estudios">
+
+                <!-- Título de la sección -->
+                <div class="section-title">
+                    <h2>Estudios</h2>
+                    <div class="linea"></div>
                 </div>
-                <div class="card-grafica">
-                    <h2 class="card">Gráfica</h2>
-                    <p class="card">Adobe Photoshop Adobe Illustrator</p>
+
+                <!-- principal -->
+                <div class="container-estudios">
+
+                    <!-- Texto izquierdo -->
+                    <div class="estudios-info">
+                        <h3>Licenciatura en Diseño y Comunicación Visual</h3>
+                        <p>Universidad Nacional de Lanús | En curso</p>
+                    </div>
+
+                    <!-- Barra de progreso y porcentaje -->
+                    <div class="container-barra">
+                        <div class="barra-carga">
+                            <div class="barra-progreso"></div>
+                        </div>
+                        <h3>55% completado</h3>
+                    </div>
+
                 </div>
             </div>
-        </div>
-    </section>
+        </section>
+
+        <!-- 6. SECTION HABILIDADES -->
+        <section class="section-habilidades">
+            <div class="section-title">
+                <h2>Habilidades y software</h2>
+                <div class="linea"></div>
+            </div>
+            <div class="tarjetas-habilidades">
+                <div class="tarjetas-izq">
+                    <div class="card-tipografia">
+                        <h2>Tipografía</h2>
+                        <ul>
+                            <li>Diseño de tipografía</li>
+                            <li>FontLab</li>
+                        </ul>
+                    </div>
+                    <div class="card-prototipado">
+                        <h2>UI/Prototipado</h2>
+                        <p>
+                            Visual Studio Code </p>
+                        <ul>
+                            <li>· CSS</li>
+                            <li>· HTML5</li>
+                            <li>·Figma</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="tarjetas-der">
+                    <div class="card-edicion">
+                        <h2>Edición/Maquetación</h2>
+                        <ul>
+                            <li>Adobe InDesign</li>
+                            <li>Adobe Acrobat</li>
+
+                        </ul>
+                    </div>
+                    <div class="card-grafica">
+                        <h2>Gráfica</h2>
+                        <ul>
+                            <li>Adobe Photoshop</li>
+                            <li>Adobe Illustrator</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
 
         <!-- 7. SECTION PROYECTOS -->
         <section class="section-proyectos">
@@ -153,42 +159,46 @@
                 <!-- CONTENEDOR DEL SLIDER -->
                 <div class="slider-container">
                     <div class="slider-track">
-                        <img src="img/proyecto-destacado.jpg" alt="Proyecto Fahrenheit - Vista 1" class="slide active">
-                        <img src="img/proyecto-destacado-02.jpg" alt="Proyecto Patagonia Alada - Vista 2" class="slide">
-                        <img src="img/proyecto-descatado-03.jpg" alt="Proyecto Qué Pizza - Vista 3" class="slide">
-                        <img src="img/proyecto-destacado-04.jpg" alt="Proyecto Herbarium - Vista 4" class="slide">
+                        <img src="img/proyecto-destacado.jpg" alt="Proyecto Fahrenheit - Vista 1" class="slide active"
+                            height="435px" width="580px">
+                        <img src="img/proyecto-destacado-02.jpg" alt="Proyecto Patagonia Alada - Vista 2" class="slide"
+                            height="435px" width="580px">
+                        <img src="img/proyecto-descatado-03.jpg" alt="Proyecto Qué Pizza - Vista 3" class="slide"
+                            height="435px" width="580px">
+                        <img src="img/proyecto-destacado-04.jpg" alt="Proyecto Herbarium - Vista 4" class="slide"
+                            height="435px" width="580px">
                     </div>
                 </div>
                 <div class="div-proyectos">
-                    <a href="#proyectos" class="button-proyectos">Ver más</a>
+                    <a href="proyectos.html" class="button-proyectos">Ver más</a>
                     <p>
-                        Podés conocer más de mi trabajo visitando mi selección de proyectos destacados. Son
-                        piezas de
-                        distintos formatos, desde publicaciones hasta cartelería. Te invito a recorrerlos.
+                        Podés conocer más de mi trabajo visitando mi selección de proyectos destacados. Te invito a recorrerlos.
                     </p>
                 </div>
             </div>
         </section>
     </main>
     <!-- 8. FOOTER -->
-    <footer class="footer">
-        <div class="div-tenes-un-proyecto">
-            <h2>¿Tenés un proyecto?</h2>
-            <button class="button-contacto">Hablemos :)</button>
-        </div>
+   <footer class="footer">
+    <div class="div-tenes-un-proyecto">
+        <h2>¿Tenés un proyecto?</h2>
+        <a href="proyectos.html#contacto" class="boton-contacto">Hablemos :)</a>
+    </div>
+
+    <div class="div-info">
         <div class="div-contactos">
-            <div class="div-email">
-                <img src="img/icono-email.svg" alt="logo correo electrónico">
-                <a href="mailto:ochoab.unla@gmail.com">E-mail</a>
-            </div>
-            <div class="div-behance">
-                <img src="img/icono-behance.svg" alt="logo behance">
-                <a href="https://www.behance.net/ochoabruno">Behance</a>
-            </div>
+            <a href="mailto:nuno.gdesign@gmail.com" class="contacto">
+                <img src="img/icono-email.svg" alt="email" height="69px" width="69px">
+                E-mail
+            </a>
+            <a href="https://www.behance.net/ochoabruno" class="contacto">
+                <img src="img/icono-behance.svg" alt="behance" height="69px" width="69px">
+                Behance
+            </a>
         </div>
         <p>Buenos Aires, Argentina | 2026</p>
-    </footer>
-
+    </div>
+</footer>
 </body>
 
 </html>
