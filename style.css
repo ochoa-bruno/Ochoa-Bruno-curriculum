@@ -911,7 +911,7 @@ article {
     
 
     body {
-        overflow-x: hidden !important;
+        overflow-x: hidden !important; /* !important pq sino no se ven los cambios en el navegador*/
         width: 100% !important;
         margin: 0 !important;
         padding: 0 !important;
@@ -985,7 +985,7 @@ article {
         width: 100% !important;
     }
 
-    /* Transformamos el <details> en una tarjeta fija abierta */
+    /*tarjeta fija abierta */
     .sobre-mi details.tarjeta {
         display: block !important;
         width: 100% !important;
@@ -997,19 +997,18 @@ article {
         box-sizing: border-box !important;
     }
 
-    /* Ocultamos la flecha o botón de la pestaña */
+    /* Ocultar la flecha de pestaña */
     .sobre-mi .tarjeta-pestana {
         display: none !important;
     }
 
-    /* Forzamos el panel y el texto interno con color oscuro visible */
     .sobre-mi .tarjeta-panel,
     .sobre-mi .tarjeta-panel p {
         display: block !important;
         visibility: visible !important;
         opacity: 1 !important;
         font-size: 0.9rem !important;
-        color: #123719 !important; /* Color seguro directo para asegurar lectura */
+        color:var(--verde-oscuro) !important;
         line-height: 1.5 !important;
         width: 100% !important;
         height: auto !important;
@@ -1018,7 +1017,6 @@ article {
         padding: 0 !important;
     }
 
-    /* Ordenamos el bloque lateral con el título arriba */
     .sobre-mi .lateral {
         order: -1 !important;
         width: 100% !important;
@@ -1065,7 +1063,7 @@ article {
     .section-habilidades .tarjetas-der {
         display: flex !important;
         flex-direction: column !important;
-        align-items: center !important; /* Centra las tarjetas horizontalmente */
+        align-items: center !important;
         width: 100% !important;
         gap: 15px !important;
     }
@@ -1078,16 +1076,15 @@ article {
     .habilidades .tarjeta-panel {
         display: flex !important;
         flex-direction: column !important;
-        align-items: center !important; /* Centra los hijos internos de la tarjeta */
-        text-align: center !important;     /* Centra el texto */
-        width: 100% !important;
+        align-items: center !important;
+        text-align: center !important;
         max-width: 100% !important;
         padding: 20px !important;
         border-radius: 25px !important;
         box-sizing: border-box !important;
     }
 
-    /* Forzamos el centrado de los textos y títulos internos */
+    /*centrado */
     .habilidades p,
     .habilidades li,
     .section-habilidades h2 {
@@ -1103,7 +1100,7 @@ article {
         font-size: 1.2rem !important;
         text-align: center !important;
     }
-    /* Proyectos y Slider adaptados */
+    /* Proyectos y slider*/
     .section-proyectos .div-section-proyectos {
         display: flex !important;
         flex-direction: column !important;
@@ -1129,7 +1126,7 @@ article {
         font-size: 0.9rem !important;
     }
 
-    /* Footer */
+    /* footer */
     .footer {
         flex-direction: column !important;
         align-items: flex-start !important;
